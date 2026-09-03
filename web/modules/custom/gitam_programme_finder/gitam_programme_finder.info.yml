@@ -1,0 +1,5 @@
+name: 'GITAM Programme Finder'
+type: module
+description: 'Database driven programme finder API'
+core_version_requirement: ^9 || ^10
+package: Custom

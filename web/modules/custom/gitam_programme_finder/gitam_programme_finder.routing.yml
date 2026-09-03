@@ -1,0 +1,14 @@
+gitam_programme_finder.ajax_api:
+  path: '/api/v1/programmes'
+  defaults:
+    _controller: '\Drupal\gitam_programme_finder\Controller\ProgrammeApiController::getProgrammesData'
+    _title: 'Programme Finder AJAX Endpoint'
+  requirements:
+    _permission: 'access content'
+gitam_programme_finder.page:
+  path: '/programme-finder'
+  defaults:
+    _controller: '\Drupal\gitam_programme_finder\Controller\ProgrammeFinderController::buildPage'
+    _title: 'Programme Finder'
+  requirements:
+    _permission: 'access content'

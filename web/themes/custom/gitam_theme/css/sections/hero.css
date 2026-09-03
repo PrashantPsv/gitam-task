@@ -1,0 +1,409 @@
+
+      /* ─── SECTION 1: HERO SPLIT (TEXT + VIDEO) ─────── */
+      .hero-split {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        /* Fills the viewport below the sticky 64px nav, but capped so a tall
+           screen doesn't open a dead whitespace band above the content. Content
+           hugs the top (see container) and the scroll cue is pushed to the foot
+           with margin-top:auto, so there is no dead band above the eyebrow. */
+        justify-content: center;
+        min-height: min(calc(100dvh - 64px), 780px);
+        padding: clamp(20px, 3vh, 40px) 0 clamp(20px, 3vh, 36px);
+      }
+      .hero-split__bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+          135deg,
+          #001e18 0%,
+          #003a30 30%,
+          #004740 60%,
+          #005548 100%
+        );
+      }
+      /* Soft highlight behind the video so the flat gradient reads with depth. */
+      .hero-split__glow {
+        position: absolute;
+        top: -10%;
+        right: -8%;
+        width: 60%;
+        height: 90%;
+        z-index: 0;
+        pointer-events: none;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(139, 203, 183, 0.16) 0%,
+          rgba(139, 203, 183, 0.05) 40%,
+          transparent 70%
+        );
+      }
+      .hero-split__container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 48px;
+      }
+      .hero-split__inner {
+        display: flex;
+        /* Top-align the two columns so the shorter text column lines up with the
+           top of the video. */
+        align-items: flex-start;
+        gap: clamp(40px, 5vw, 64px);
+        width: 100%;
+      }
+      /* Left: Text */
+      .hero-split__text {
+        flex: 1;
+        min-width: 0;
+      }
+      .hero-split__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--aw);
+        margin-bottom: 24px;
+      }
+      .hero-split__dot {
+        width: 7px;
+        height: 7px;
+        background: var(--aw);
+        border-radius: 50%;
+        animation: blink 2s ease-in-out infinite;
+      }
+      .hero-split__title {
+        font-family: 'Forma DJR Display', Inter, sans-serif;
+        font-size: clamp(32px, 4.8vw, 64px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+        color: #fff;
+        margin: 0 0 20px;
+      }
+      .hero-split__accent {
+        color: var(--gl);
+      }
+      .hero-split__desc {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.7;
+        margin: 0 0 36px;
+        max-width: 520px;
+      }
+      .hero-split__ctas {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .hero-split__btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 32px;
+        background: var(--aw);
+        color: var(--gd) !important;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .hero-split__btn-primary svg {
+        width: 16px;
+        height: 16px;
+      }
+      .hero-split__btn-primary:hover {
+        background: #fff;
+        transform: translateY(-1px);
+      }
+      .hero-split__btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: transparent;
+        color: #fff !important;
+        font-size: 15px;
+        font-weight: 600;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+        text-decoration: none;
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .hero-split__btn-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* Quick-facts strip: a single full-width credibility bar sitting below
+         both columns, so it reads as one line of accomplishments spanning the
+         hero rather than a shrink-to-fit box drifting under the left column. */
+      .hero-split__stats {
+        display: flex;
+        align-items: stretch;
+        list-style: none;
+        margin: clamp(48px, 6vh, 80px) 0 0;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        width: 100%;
+      }
+      .hero-split__stats li {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .hero-split__stats li:last-child {
+        border-right: none;
+      }
+      .hero-split__stat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: rgba(139, 203, 183, 0.14);
+        color: var(--gl);
+      }
+      .hero-split__stat-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+      .hero-split__stat-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        white-space: nowrap;
+      }
+      .hero-split__stat-num {
+        font-size: 16px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.3px;
+        line-height: 1.2;
+      }
+      .hero-split__stat-lbl {
+        font-size: 11.5px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.2;
+      }
+
+      /* Right: Video */
+      .hero-split__video {
+        flex: 1.4;
+        min-width: 0;
+      }
+      .hero-split__video-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+      .hero-split__video-caption {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px 8px 8px;
+        background: rgba(0, 20, 16, 0.55);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        /* Hidden for a couple seconds after the iframe's .video-started class
+           lands (js/script.js) — that class fires on the iframe's document
+           load, well before YouTube's own title/loading overlay clears, so a
+           fixed extra delay is used to stay clear of it rather than an exact
+           (and unreliable without the full IFrame Player API) play-state signal. */
+        opacity: 0;
+        transition: opacity 0.6s ease 2s;
+        border-radius: 100px;
+      }
+      .hero-split__video-wrap.video-started .hero-split__video-caption {
+        opacity: 1;
+      }
+      .hero-split__video-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 24px;
+        flex-shrink: 0;
+        background: transparent;
+        overflow: visible;
+      }
+      .hero-split__video-avatar img {
+        display: block;
+        height: 22px;
+        width: auto;
+      }
+      .hero-split__video-caption-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        line-height: 1.25;
+      }
+      .hero-split__video-caption-text strong {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .hero-split__video-caption-text span {
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .hero-split__video-thumb {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .hero-split__video-iframe {
+        position: absolute;
+        inset: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        z-index: 2;
+        opacity: 1;
+        /* Ambient background loop only — let clicks fall through to the wrap so
+           the whole tile opens the full-screen modal instead of the embed's
+           own controls swallowing the click. */
+        pointer-events: none;
+      }
+      /* Clean circular play button centred on the video — the pill with a
+         "Watch Video" label sat awkwardly across the presenter's face; a single
+         round control reads as a play affordance without covering the frame. */
+      .hero-split__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px;
+        height: 76px;
+        padding: 0;
+        background: rgba(0, 20, 16, 0.42);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 2px solid rgba(255, 255, 255, 0.85);
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+        transition: background 0.2s, transform 0.2s, border-color 0.2s;
+      }
+      .hero-split__play svg {
+        width: 26px;
+        height: 26px;
+        margin-left: 3px;
+      }
+      .hero-split__play:hover {
+        background: var(--gd);
+        border-color: #fff;
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+
+      /* Scroll cue: sits in normal flow at the foot of the hero column
+         (margin-top:auto pushes it down), so it always clears the stats bar
+         instead of being absolutely pinned where it could overlap. */
+      .hero-split__scroll-cue {
+        position: relative;
+        z-index: 2;
+        margin-top: clamp(40px, 6vh, 72px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.65);
+        transition: color 0.2s;
+        animation: hero-scroll-cue-float 2s ease-in-out infinite;
+      }
+      .hero-split__scroll-cue:hover {
+        color: rgba(255, 255, 255, 0.95);
+      }
+      .hero-split__scroll-cue span {
+        font-size: 10.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      /* "Mouse" icon: rounded outline (the body) with a wheel dot that travels
+         down and fades — the familiar scroll affordance seen across the web. */
+      .hero-split__scroll-mouse {
+        display: block;
+        width: 22px;
+        height: 34px;
+        border: 2px solid currentColor;
+        border-radius: 12px;
+        position: relative;
+      }
+      .hero-split__scroll-wheel {
+        position: absolute;
+        left: 50%;
+        top: 7px;
+        width: 3px;
+        height: 7px;
+        margin-left: -1.5px;
+        border-radius: 2px;
+        background: currentColor;
+        animation: hero-scroll-wheel 1.6s ease-in-out infinite;
+      }
+
+      /* ─── HERO STATS BAR ───────────────────────────── */
+      #sec-hero-stats {
+        padding: 0;
+        margin: 0;
+        background: #06140f;
+      }
+
+      #sec-hero-stats .hero-stat-num .count {
+        color: #8bcab7;
+        font-variant-numeric: tabular-nums;
+        display: inline-block;
+        min-width: 2.5ch;
+      }
+
+      #sec-hero-stats .hero-stat-num > span:not(.count) {
+        color: #8bcab7;
+        font-size: 0.65em;
+      }
+      .eee-title,
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+      }

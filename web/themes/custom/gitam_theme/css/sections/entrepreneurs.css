@@ -1,0 +1,387 @@
+
+/* ── Entrepreneurs photos ── */
+.ec-photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+.ec-photo-1 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Muralidhar_Teppala.webp");
+}
+
+.ec-photo-2 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Viswa_Colluru.webp");
+}
+
+.ec-photo-3 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Gayathri_Kanumuri.webp");
+}
+
+.ec-photo-4 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Ragavan_Venkatessan.webp");
+}
+
+.ec-photo-5 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Vinay_Agastya.webp");
+}
+
+.ec-brand img {
+  display: block;
+  width: auto;
+  max-height: 22px;
+}
+
+.ec-content {
+  font-size: 16px;
+}
+
+      /* ─── SECTION 5: ENTREPRENEURS ──────────────────── */
+      .entrepreneurs-section {
+        background: var(--aw);
+        padding: 72px 64px;
+      }
+
+      .ec-large {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .ec-tall {
+        grid-column: 2 / 5;
+        grid-row: 1;
+      }
+
+      .ec-wide {
+        grid-column: 1 / 3;
+        grid-row: 2;
+      }
+
+      .ec-small-1 {
+        grid-column: 3;
+        grid-row: 2;
+      }
+
+      .ec-small-2 {
+        grid-column: 4;
+        grid-row: 2;
+      }
+
+      .ec-photo {
+        position: absolute;
+        inset: 0;
+      }
+
+      .ec-photo-1 {
+        background: linear-gradient(
+          160deg,
+          #003530 0%,
+          #006655 45%,
+          #3a9e82 100%
+        );
+      }
+
+      .ec-photo-2 {
+        background: linear-gradient(
+          160deg,
+          #002e28 0%,
+          #005548 50%,
+          #007060 100%
+        );
+      }
+
+      .ec-photo-3 {
+        background: linear-gradient(
+          145deg,
+          #004038 0%,
+          #007367 55%,
+          #5ab8a2 100%
+        );
+      }
+
+      .ec-photo-4 {
+        background: linear-gradient(
+          160deg,
+          #003a32 0%,
+          #006050 55%,
+          #008875 100%
+        );
+      }
+
+      .ec-photo-5 {
+        background: linear-gradient(
+          160deg,
+          #002820 0%,
+          #004d3e 50%,
+          #007060 100%
+        );
+      }
+
+      .ec-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(244, 228, 201, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+      }
+
+      .ec-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+          to top,
+          rgba(0, 20, 15, 0.68) 0%,
+          rgba(0, 20, 15, 0.22) 40%,
+          transparent 72%
+        );
+        pointer-events: none;
+        transition: background 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .ec-overlay-side {
+        background: linear-gradient(
+          to right,
+          rgba(0, 20, 15, 0.62) 0%,
+          rgba(0, 20, 15, 0.2) 45%,
+          transparent 78%
+        );
+      }
+
+      .ec.is-revealed .ec-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(0, 20, 15, 0.92) 0%,
+          rgba(0, 20, 15, 0.5) 52%,
+          transparent 100%
+        );
+      }
+
+      .ec.is-revealed.ec-wide .ec-overlay-side {
+        background: linear-gradient(
+          to right,
+          rgba(0, 20, 15, 0.9) 0%,
+          rgba(0, 20, 15, 0.55) 55%,
+          transparent 100%
+        );
+      }
+
+      .ec-reveal {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(4px);
+        transition:
+          max-height 0.44s cubic-bezier(0.22, 0.61, 0.36, 1),
+          opacity 0.3s ease 0.06s,
+          transform 0.38s ease 0.06s,
+          margin 0.44s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .ec.is-revealed .ec-reveal {
+        max-height: 120px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .ec.is-revealed .ec-tag.ec-reveal,
+      .ec.is-revealed .ec-badges-top.ec-reveal {
+        max-height: 48px;
+      }
+
+      .ec.is-revealed .ec-badges.ec-reveal {
+        max-height: 48px;
+      }
+
+      .ec.is-revealed .ec-social.ec-reveal {
+        max-height: 36px;
+      }
+
+      .ec.is-revealed .ec-big-name-bg {
+        opacity: 0.35;
+      }
+
+      .ec-big-name-bg {
+        transition: opacity 0.4s ease;
+      }
+
+      .ec-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 0;
+      }
+
+      .ec-brand {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 10px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: 0.2px;
+        line-height: 1;
+      }
+
+      .ec-badges-top {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .ec-content {
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+        right: 18px;
+        z-index: 2;
+        overflow: hidden;
+        max-width: calc(100% - 36px);
+        box-sizing: border-box;
+      }
+
+      .ec-content-wide {
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 18px;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .ec-big-name-bg {
+        position: absolute;
+        right: -10px;
+        bottom: -20px;
+        font-family: var(--font-body);
+        font-size: clamp(80px, 10vw, 140px);
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.06);
+        letter-spacing: -4px;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        z-index: 1;
+      }
+
+      .ec-wide-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .ec-badges {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+      }
+
+      .ec.is-revealed .ec-badges {
+        margin-top: 6px;
+        margin-bottom: 0;
+      }
+
+      .ec-badge {
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 100px;
+      }
+
+      .ec-badge-shark {
+        background: rgba(139, 203, 183, 0.15);
+        border: 1px solid rgba(139, 203, 183, 0.3);
+        color: var(--gl);
+      }
+
+      .ec-name-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+        margin-bottom: 6px;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .ec-name {
+        font-family: var(--font-body);
+        font-size: clamp(18px, 1.8vw, 24px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+        margin-bottom: 0;
+        min-width: 0;
+        flex: 1 1 auto;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .ec-company {
+        font-family: var(--font-body);
+        font-size: clamp(14px, 1.3vw, 18px);
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.92);
+        letter-spacing: -0.3px;
+        line-height: 1.15;
+        margin: 0;
+        padding-top: 1px;
+      }
+
+      .ec-founder {
+        font-size: 12.5px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 0;
+        margin-top: 2px;
+      }
+
+      .ec-social {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      .ec-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background 0.2s;
+        flex-shrink: 0;
+      }
+
+      .ec-icon:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .ec-icon svg {
+        width: 13px;
+        height: 13px;
+      }

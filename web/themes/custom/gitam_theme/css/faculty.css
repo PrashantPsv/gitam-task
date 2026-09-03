@@ -1,0 +1,649 @@
+/* ─── GUEST SPEAKERS (within Faculty section) ───── */
+/* ─── FACULTY · dark{
+        position: relative;
+        background:
+          radial-gradient(
+            1100px 620px at 82% -8%,
+            rgba(0, 115, 103, 0.3),
+            transparent 60%
+          ),
+          radial-gradient(
+            820px 560px at -8% 24%,
+            rgba(165, 130, 85, 0.1),
+            transparent 55%
+          ),
+          linear-gradient(180deg, #061310 0%, #050f0c 60%, #07100e 100%);
+        color: #f4e9d6;
+        padding: clamp(64px, 9vh, 120px) 0 clamp(40px, 6vh, 84px);
+        overflow: hidden;
+      }
+
+      /* ─── FACULTY (ported from apply-page-final, apf- namespace) ─── */
+.apf-section {
+  position: relative;
+  background:
+    radial-gradient(
+      120% 80% at 18% 0%,
+      rgba(0, 115, 103, 0.28) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, #06241f 0%, #04150f 100%);
+  padding: 84px 0 64px;
+  overflow: hidden;
+}
+
+.apf-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.apf-header {
+  position: relative;
+  z-index: 1;
+  padding: 0 64px;
+  margin-bottom: 44px;
+}
+
+.apf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gl);
+  margin-bottom: 16px;
+}
+
+.apf-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gl);
+  opacity: 0.6;
+}
+
+.apf-title {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.apf-title span {
+  color: var(--gl);
+}
+
+.apf-sub {
+  font-size: 14.5px;
+  font-weight: 400;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.62);
+}
+.apf-sub strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.apf-rows {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.apf-row-wrap {
+  overflow: hidden;
+  position: relative;
+  /* Room for card hover lift so the border isn't clipped */
+  padding: 8px 0;
+}
+
+.apf-row-wrap::before,
+.apf-row-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.apf-row-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #06180f, transparent);
+}
+
+.apf-row-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #06180f, transparent);
+}
+
+.apf-row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.apf-row-1 {
+  animation: apf-left 38s linear infinite;
+}
+
+.apf-row-2 {
+  animation: apf-right 42s linear infinite;
+}
+
+/* Tap/click a card to freeze the rows (hover no longer pauses) */
+.apf-row.is-paused {
+  animation-play-state: paused;
+}
+
+.apf-card {
+  width: 278px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.apf-card:hover {
+  position: relative;
+  z-index: 3;
+  transform: translateY(-6px);
+  border: 1px solid rgba(139, 203, 183, 0.55);
+  box-shadow:
+    0 20px 44px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(139, 203, 183, 0.35);
+}
+
+.apf-photo {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apf-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+.apf-ph-1 {
+  background: linear-gradient(150deg, #003530 0%, #007367 100%);
+}
+
+.apf-ph-2 {
+  background: linear-gradient(150deg, #004038 0%, #009980 100%);
+}
+
+.apf-ph-3 {
+  background: linear-gradient(150deg, #001e40 0%, #005599 100%);
+}
+
+.apf-ph-4 {
+  background: linear-gradient(150deg, #2a1800 0%, #7a4800 100%);
+}
+
+.apf-ph-5 {
+  background: linear-gradient(150deg, #1a0030 0%, #550090 100%);
+}
+
+.apf-ph-6 {
+  background: linear-gradient(150deg, #002a10 0%, #008835 100%);
+}
+
+.apf-ph-7 {
+  background: linear-gradient(150deg, #1a1800 0%, #554400 100%);
+}
+
+.apf-ph-8 {
+  background: linear-gradient(150deg, #001a2a 0%, #005577 100%);
+}
+
+.apf-photo-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
+
+.apf-photo-initial {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.apf-info {
+  position: relative;
+  padding: 16px 18px 18px;
+}
+
+.apf-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.apf-dept {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.58);
+  margin-bottom: 10px;
+}
+
+.apf-cred {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(212, 240, 230, 0.92);
+  margin-bottom: 11px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.apf-cred::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  background: var(--gl);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1 2 6l10 5 8-4v6h2V6L12 1zM4 10v4c0 2.2 3.6 4 8 4s8-1.8 8-4v-4l-8 4-8-4z'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1 2 6l10 5 8-4v6h2V6L12 1zM4 10v4c0 2.2 3.6 4 8 4s8-1.8 8-4v-4l-8 4-8-4z'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  opacity: 0.85;
+}
+
+.apf-stats {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.apf-stat {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.apf-stat b {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+.apf-stat span {
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 3px;
+}
+
+.apf-badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.apf-badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(139, 203, 183, 0.1);
+  border: 1px solid rgba(139, 203, 183, 0.28);
+  color: var(--gl);
+  white-space: nowrap;
+}
+
+.apf-badge.is-elite {
+  background: rgba(139, 203, 183, 0.18);
+  border-color: rgba(139, 203, 183, 0.5);
+  color: #d4f0e6;
+}
+
+/* faculty section new styles */
+.faculty-section {
+  position: relative;
+  background:
+    radial-gradient(
+      120% 80% at 18% 0%,
+      rgba(0, 115, 103, 0.28) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, #06241f 0%, #04150f 100%);
+  padding: 84px 0 64px;
+  overflow: hidden;
+}
+
+.faculty-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.faculty-header {
+  position: relative;
+  z-index: 1;
+  padding: 0 64px;
+  margin-bottom: 44px;
+}
+
+.faculty-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gl);
+  margin-bottom: 16px;
+}
+
+.faculty-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gl);
+  opacity: 0.6;
+}
+
+.faculty-title {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.faculty-title span {
+  color: var(--gl);
+}
+
+.faculty-sub {
+  font-size: 14.5px;
+  font-weight: 400;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.faculty-rows {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faculty-row-wrap {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+}
+
+.faculty-row-wrap::before,
+.faculty-row-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.faculty-row-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #06180f, transparent);
+}
+
+.faculty-row-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #06180f, transparent);
+}
+
+.faculty-row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.faculty-row-1 {
+  animation: fac-left 38s linear infinite;
+}
+
+.faculty-row-2 {
+  animation: fac-right 42s linear infinite;
+}
+
+@keyframes fac-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fac-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fac-card {
+  width: 210px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  cursor: default;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.fac-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 203, 183, 0.55);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: relative;
+}
+
+.fac-photo {
+  width: 100%;
+  height: 138px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fac-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+.fac-ph-1 {
+  background: linear-gradient(150deg, #003530 0%, #007367 100%);
+}
+
+.fac-ph-2 {
+  background: linear-gradient(150deg, #004038 0%, #009980 100%);
+}
+
+.fac-ph-3 {
+  background: linear-gradient(150deg, #001e40 0%, #005599 100%);
+}
+
+.fac-ph-4 {
+  background: linear-gradient(150deg, #2a1800 0%, #7a4800 100%);
+}
+
+.fac-ph-5 {
+  background: linear-gradient(150deg, #1a0030 0%, #550090 100%);
+}
+
+.fac-ph-6 {
+  background: linear-gradient(150deg, #002a10 0%, #008835 100%);
+}
+
+.fac-ph-7 {
+  background: linear-gradient(150deg, #1a1800 0%, #554400 100%);
+}
+
+.fac-ph-8 {
+  background: linear-gradient(150deg, #001a2a 0%, #005577 100%);
+}
+
+.fac-photo-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
+
+.fac-photo-initial {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.fac-info {
+  position: relative;
+  padding: 14px 16px 16px;
+}
+
+.fac-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.fac-dept {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 9px;
+}
+
+.fac-badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.fac-badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: rgba(139, 203, 183, 0.1);
+  border: 1px solid rgba(139, 203, 183, 0.28);
+  color: var(--gl);
+  white-space: nowrap;
+}

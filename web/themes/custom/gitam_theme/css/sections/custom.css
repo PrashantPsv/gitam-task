@@ -1,0 +1,642 @@
+.he-card {
+  background-position-x: center;
+  max-width: 100%;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.he-grad-1 {
+  background-image: url("../images/Ratna-Varshith-Kolachala.webp");
+}
+
+.he-grad-2 {
+  background-image: url("../images/Siddhardha-Nanda.webp");
+}
+
+.he-grad-3 {
+  background-image: url("../images/Jushatha-Varsha-Koduri.webp");
+}
+
+.he-grad-4 {
+  background-image: url("../images/Surya-Sandeep-Akella.webp");
+}
+
+.he-grad-5 {
+  background-image: url("../images/Tejomurtula-Kameswari-Yasaswini.webp");
+}
+
+.he-grad-6 {
+  background-image: url("../images/Ram-Ridhan.webp");
+}
+
+.ec-photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  position: absolute;
+  inset: 0;
+}
+.ec-photo-1 {
+  background-image: url("../images/Muralidhar_Teppala.webp");
+}
+
+.ec-photo-2 {
+  background-image: url("../images/Viswa_Colluru.webp");
+}
+
+.ec-photo-3 {
+  background-image: url("../images/Gayathri_Kanumuri.webp");
+}
+
+.ec-photo-4 {
+  background-image: url("../images/Ragavan_Venkatessan.webp");
+}
+
+.ec-photo-5 {
+  background-image: url("../images/Vinay_Agastya.webp");
+}
+
+.bt-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+}
+
+.bt-p1 {
+  background-image: url("../images/Gattem_Venkatesh.webp");
+}
+.bt-p2 {
+  background-image: url("../images/Gautami_Tadimalla.webp");
+}
+.bt-p3 {
+  background-image: url("../images/Goutam_Surana.webp");
+}
+.bt-p4 {
+  background-image: url("../images/Vaibhav_sisinty1.webp");
+}
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .d-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+}
+
+/* Per-campus gradient palettes */
+.ht-vizag-5 {
+  background-image: url("../images/campus/vsp/Talent-Cafe.webp");
+}
+
+.ht-vizag-4 {
+  background-image: url(../images/campus/vsp/Dinning.webp);
+}
+
+.ht-vizag-3 {
+  background-image: url(../images/campus/vsp/Talent-Cafe.webp);
+}
+
+.ht-vizag-2 {
+  background-image: url(../images/campus/vsp/Ac-Rooms.webp);
+}
+
+.ht-vizag-6 {
+  background-image: url(../images/campus/vsp/Venture-cafe.webp);
+}
+
+.ht-hyd-2 {
+  background-image: url("../images/campus/new/Food-Court.webp");
+}
+
+.ht-hyd-3 {
+  background-image: url("../images/campus/new/AC-Rooms.webp");
+}
+
+.ht-hyd-6 {
+  background-image: url("../images/campus/new/Sports-Complex.webp");
+}
+
+.ht-hyd-4 {
+  background-image: url("../images/campus/new/Study-Lounge.webp");
+}
+
+.ht-hyd-5 {
+  background-image: url("../images/campus/new/Campus-Mobile.webp");
+}
+
+.ht-blr-2 {
+  background-image: url("../images/campus/new/GITAM-Cafe.webp");
+}
+
+.ht-blr-3 {
+  background-image: url("../images/campus/new/Student-Rooms.webp");
+}
+
+.ht-blr-4 {
+  background-image: url("../images/campus/new/Library.webp");
+}
+
+.ht-blr-5 {
+  background-image: url("../images/campus/new/Footaball-Court.webp");
+}
+
+.ht-blr-6 {
+  background-image: url("../images/campus/new/Basketball.webp");
+}
+
+.campus-photo img {
+  height: 100%;
+}
+
+.campus-tour-video {
+  background: transparent;
+}
+.campus-tour-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  border-radius: 12px;
+}
+.campus-tour-video iframe {
+  transition: opacity 0s ease;
+  display: block;
+  background: transparent;
+}
+
+.pl-photo-1 {
+  background-image: url("../images/Shruti_Mishra.webp");
+}
+.pl-photo-2 {
+  background-image: url("../images/Madapadi-Bharathi-Rani.webp");
+}
+.pl-photo-3 {
+  background-image: url("../images/ADITYA-TIWARI.webp");
+}
+.pl-photo-4 {
+  background-image: url("../images/Sai-Praseeda.webp");
+}
+.pl-photo-5 {
+  background-image: url("../images/P_Rasagna.webp");
+}
+.pl-photo-6 {
+  background-image: url("../images/sasmit-singh.webp");
+}
+.pl-photo-7 {
+  background-image: url("../images/Varshith-Sai-Raj-Panchadarla.webp");
+}
+.pl-photo-8 {
+  background-image: url("../images/M_Dhatri.webp");
+}
+.pl-photo-9 {
+  background-image: url("../images/B-Likith.webp");
+}
+.pl-photo-10 {
+  background-image: url("../images/KPMG_Vishal.webp");
+}
+.pl-photo-11 {
+  background-image: url("../images/M_Yoshita.webp");
+}
+.pl-photo-12 {
+  background-image: url("../images/B_Praseeda.webp");
+}
+@media (max-width: 1024px) {
+  .he-grad-2 {
+    background-image: url("../images/Siddhardha-Nanda-mobile.webp");
+  }
+  .he-grad-3 {
+    background-image: url("../images/Jushatha-Varsha-Koduri-mobile.webp");
+  }
+  .he-grad-4 {
+    background-image: url("../images/Surya-Sandeep-Akella-mobile.webp");
+  }
+  .he-grad-5 {
+    background-image: url("../images/Tejomurtula-Kameswari-Yasaswini-mobile.webp");
+  }
+  .he-grad-6 {
+    background-image: url("../images/Ram-Ridhan-mobile1.webp");
+  }
+
+  .ec-photo-1 {
+    background-image: url("../images/Muralidhar_Teppala-mobile.webp");
+  }
+  .ec-photo-2 {
+    background-image: url("../images/Viswa_Colluru_mobile.webp");
+  }
+  .ec-photo-3 {
+    background-image: url("../images/Gayathri_Kanumuri-mobile.webp");
+  }
+  .ec-photo-4 {
+    background-image: url("../images/Ragavan_Venkatessan-mobile.webp");
+  }
+  .ec-photo-5 {
+    background-image: url("../images/Vinay_Agastya-mobile.webp");
+  }
+  .he-card {
+    max-width: 100%;
+  }
+  .bt-p1 {
+    background-image: url("../images/Gattem_Venkatesh_mobile.webp");
+  }
+
+  .bt-p3 {
+    background-image: url("../images/Goutam_Surana_mobile.webp");
+  }
+  .bt-p4 {
+    background-image: url("../images/Vaibhav_sisinty_mobile.webp");
+  }
+  /* campus */
+  .ht-vizag-5 {
+    background-image: url("../images/campus/vsp/Talent-Cafe-mobile.webp");
+  }
+  .ht-vizag-4 {
+    background-image: url(../images/campus/vsp/Dinning-mobile.webp);
+  }
+  .ht-vizag-3 {
+    background-image: url(../images/campus/vsp/Recreational-mobile.webp);
+  }
+  .ht-vizag-6 {
+    background-image: url(../images/campus/new/Venture-cafe-mobile.webp);
+  }
+  .ht-hyd-2 {
+    background-image: url("../images/campus/new/Food-Court-mobile.webp");
+  }
+  .ht-hyd-3 {
+    background-image: url("../images/campus/new/AC-Rooms-mobile.webp");
+  }
+  .ht-hyd-4 {
+    background-image: url("../images/campus/new/Study-Lounge-mobile.webp");
+  }
+  .ht-blr-5,
+  .ht-hyd-5 {
+    background-image: url("../images/campus/new/Campus-Mobile.webp");
+  }
+  .ht-blr-2 {
+    background-image: url("../images/campus/new/GITAM-Cafe-mobile.webp");
+  }
+  .ht-blr-3 {
+    background-image: url("../images/campus/new/Student-Rooms-mobile.webp");
+  }
+  .ht-blr-4 {
+    background-image: url("../images/campus/new/Library-mobile.webp");
+  }
+  .ht-blr-6 {
+    background-image: url("../images/campus/new/Football-mobile.webp");
+  }
+  .ht-vizag-la-1 {
+    background-image: url("../images/attractions/vsp/Araku-mobile.webp");
+  }
+}
+
+.hero-split__video-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.hero-split__video-player {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-split__video-controls {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  z-index: 20;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-split__video-wrap:hover .hero-split__video-controls,
+.hero-split__video-wrap:focus-within .hero-split__video-controls {
+  opacity: 1;
+}
+
+.hero-split__video-btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.hero-split__video-btn:hover {
+  background: #fff;
+  color: #004b40;
+  transform: scale(1.08);
+}
+
+.hero-split__video-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-pause,
+.icon-volume {
+  display: none;
+}
+
+.hero-split__video-overlay-play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 72px;
+  height: 72px;
+
+  border: none;
+  border-radius: 50%;
+
+  /* background:#B01116; */
+  background: rgba(0, 47, 40, 0.94);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 15;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-split__video-overlay-play svg {
+  width: 34px;
+  height: 34px;
+
+  margin-left: 3px;
+}
+
+.hero-split__video-wrap.is-paused .hero-split__video-overlay-play {
+  opacity: 1;
+  visibility: visible;
+}
+.hero-split__video-player {
+  transition: opacity 0.35s ease;
+}
+
+.hero-split__video-wrap.is-paused .hero-split__video-player {
+  opacity: 0.82;
+}
+
+.hero-split__video-caption {
+  opacity: 1;
+}
+
+/* responsive.css */
+@media (hover: hover) and (min-width: 601px) {
+  .ec .ec-overlay,
+  .ec.ec-wide .ec-overlay-side,
+  .pl-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 20, 15, 0.4) 0,
+      rgba(0, 20, 15, 0.3) 52%,
+      transparent 100%
+    );
+  }
+  .bt-card .bt-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 10, 8, 0.3) 0,
+      rgba(0, 10, 8, 0.3) 20%,
+      transparent 100%
+    );
+  }
+}
+
+@media (hover: hover) {
+  .ec:hover .ec-overlay,
+  .ec:focus-within .ec-overlay,
+  .ec:hover.ec-wide .ec-overlay-side,
+  .ec:focus-within.ec-wide .ec-overlay-side,
+  .ec .ec-overlay,
+  .ec.ec-wide .ec-overlay-side,
+  .pl-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 20, 15, 0.4) 0%,
+      rgba(0, 20, 15, 0.3) 52%,
+      transparent 100%
+    );
+  }
+
+  .bt-card:focus-within .bt-overlay,
+  .bt-card:hover .bt-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 10, 8, 0.2) 0,
+      rgba(0, 10, 8, 0.2) 20%,
+      transparent 100%
+    );
+  }
+}
+
+/* enterprenuers.css */
+.ec-brand img {
+  max-height: none;
+}
+
+.he-dept-tag,
+.ec-badge {
+  background: rgba(0, 35, 32, 0.88);
+  border: 1px solid rgba(139, 203, 183, 0.65);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.he-card::after {
+  background: none;
+}
+
+.ht-photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* base.css */
+.ht-btm-1,
+.ht-btm-2 {
+  aspect-ratio: 9 / 2;
+}
+
+.gn-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 24, 22, 0) 30%,
+    rgba(8, 24, 22, 0.05) 60%,
+    rgba(6, 20, 18, 0.92) 100%
+  );
+}
+
+.disc-card__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 47, 40, 0.92) 0%,
+    rgba(0, 47, 40, 0.3) 20%,
+    transparent 70%
+  );
+}
+.disc-card {
+  min-width: 310px;
+  height: auto;
+}
+
+/* .has-mega:hover .login-dropdown {
+  visibility: hidden;
+} */
+
+/* end base.css */
+
+/* responsive.css */
+@media (max-width: 600px) {
+  .ht-btm-1 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    aspect-ratio: 25 / 9;
+  }
+  .ht-btm-2 {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    aspect-ratio: 25 / 9;
+  }
+}
+
+/* base.css */
+.ht-photo-label {
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
+  right: inherit;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  padding: 4px 10px;
+  border-radius: 100px;
+  pointer-events: none;
+  letter-spacing: 0.2px;
+}
+
+.eee-img:last-child:not(.eee-img-large) {
+  grid-column: inherit;
+  aspect-ratio: inherit;
+}
+
+.pl-card:hover::after {
+  height: 50% !important;
+}
+
+/* campuses.css */
+.campus-year {
+  background: #fff;
+  color: var(--g);
+}
+
+.gn-flag {
+  display: none;
+}
+
+/* base.css */
+.login-dropdown {
+  left: inherit;
+}
+
+.login-portal-item {
+  flex-direction: row !important;
+  gap: 12px !important;
+}
+.login-payments {
+  color: #f4e4c9 !important;
+  flex-direction: row !important;
+}
+
+/* .why-title,
+.why-num,
+.campuses-title,
+.campus-city-name,
+.accred-heading,
+.accred-stat-num,
+.placements-title,
+.placements-title-green,
+.recruiters-main-title,
+.recruiters-main-title-gold {
+  font-family: var(--font-body-bold);
+} */
+
+.accred-stat-num {
+  font-family: var(--font-body);
+}
+
+body,
+.pnav-btn {
+  font-family: var(--font-body-reg);
+}
+
+.disc-title,
+.explore-hd-title,
+.rxd-slide-title,
+.section-title,
+.vm-title,
+.vm-statement,
+.eee-title {
+  letter-spacing: 1.3px !important;
+}
+
+.gn-info {
+  margin-top: 7px;
+}

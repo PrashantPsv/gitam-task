@@ -1,0 +1,266 @@
+      .mega a:not(.mega-feature):not(.mega-tile):not(.mf-cta):not(.prog-finder-cta):not(.prog-course-link):not(.cmega-campus):not(.cmega-link) {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding: 8px 10px;
+        margin: 0 -10px;
+        border-radius: 8px;
+        font-size: 14.5px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .mega a:not(.mega-feature):not(.mega-tile):not(.mf-cta):not(.prog-finder-cta):not(.prog-course-link):not(.cmega-campus):not(.cmega-link)::after {
+        display: none;
+      }
+      .mega a:not(.mega-feature):not(.mega-tile):not(.mf-cta):not(.prog-finder-cta):not(.prog-course-link):not(.cmega-campus):not(.cmega-link):hover {
+        background: rgba(139,203,183,0.1);
+      }
+
+      /* ── 3-column programme mega menu (Masters' Union style) ── v2 */
+      .prog-mega-inner {
+        display: flex;
+        min-height: 340px;
+      }
+      .prog-col {
+        padding: 36px 0;
+        box-sizing: border-box;
+      }
+      .prog-col-label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.35);
+        padding: 0 36px 18px;
+        margin: 0;
+      }
+      /* Column 1 — Categories */
+      .prog-col-cats {
+        width: 300px;
+        flex-shrink: 0;
+      }
+      .prog-cat-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: calc(100% - 24px);
+        margin: 0 12px;
+        padding: 14px 24px;
+        background: none;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-family: 'Forma DJR Display', Inter, sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.45);
+        text-align: left;
+        transition: color 0.2s, background 0.2s;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+      }
+      .prog-cat-btn:hover {
+        color: rgba(255,255,255,0.85);
+        background: rgba(139,203,183,0.10);
+      }
+      .prog-cat-btn.active {
+        color: #fff;
+        background: rgba(139,203,183,0.14);
+      }
+      .prog-cat-btn .prog-arrow {
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+        font-size: 18px;
+        transform: translateX(-4px);
+      }
+      .prog-cat-btn.active .prog-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* Programme Finder CTA */
+      .prog-finder-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: calc(100% - 72px);
+        margin: 20px 36px 0;
+        padding: 0 24px;
+        height: 48px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background: #F4E4C9;
+        color: #004740 !important;
+        font-size: 15px;
+        font-weight: 800;
+        -webkit-text-stroke: 0.6px #004740;
+        text-decoration: none;
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+      .prog-finder-cta:hover {
+        background: #F4E4C9;
+      }
+      .prog-finder-cta::after {
+        display: none !important;
+      }
+      ul.prog-disc-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      ul.prog-disc-list > li {
+        margin-bottom: 4px;
+      }
+      .prog-disc-btn {
+        display: block;
+        width: 100%;
+        padding: 14px 24px;
+        background: none;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.75);
+        text-align: left;
+        transition: color 0.15s, background 0.15s;
+        line-height: 1.4;
+      }
+      .prog-disc-btn:hover {
+        color: #fff;
+        background: rgba(139,203,183,0.10);
+      }
+      .prog-disc-btn.active {
+        color: #fff;
+        background: rgba(139,203,183,0.14);
+      }
+
+      /* Column 3 — Courses */
+      .prog-col-courses {
+        flex: 1;
+        min-width: 280px;
+        overflow-y: auto;
+      }
+      ul.prog-course-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      ul.prog-course-list > li {
+        margin-bottom: 4px;
+      }
+      .mega .prog-course-link,
+      .mega a.prog-course-link {
+        display: block !important;
+        flex-direction: row !important;
+        padding: 14px 24px !important;
+        margin: 0 !important;
+        border-radius: 12px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        color: rgba(255,255,255,0.75) !important;
+        text-decoration: none !important;
+        transition: color 0.15s, background 0.15s !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+      }
+      .mega .prog-course-link:hover,
+      .mega a.prog-course-link:hover {
+        color: #fff !important;
+        background: rgba(139,203,183,0.10) !important;
+      }
+      .mega .prog-course-link::after,
+      .mega a.prog-course-link::after {
+        display: none !important;
+      }
+      .prog-course-dur {
+        display: inline;
+        font-size: 12px;
+        color: rgba(255,255,255,0.3);
+        margin-left: 8px;
+      }
+
+      /* Empty / placeholder state */
+      .prog-empty {
+        padding: 24px 36px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.3);
+        font-style: italic;
+      }
+
+      .card-plac {
+        grid-area: plac;
+      }
+
+      .card-pkg {
+        grid-area: pkg;
+      }
+
+      /* Placement card gets bigger logos - more horizontal room */
+      .card-plac .logo-tile img {
+        max-height: 28px;
+        max-width: 100%;
+        opacity: 0.8;
+      }
+
+      /* ── Global partnerships card (in bento) ── */
+      .card-partners {
+        grid-area: part;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* ─── SECTION 13: EXPLORE ENGAGE ENJOY ─────────── */
+      .eee-section {
+        background: #f8f7f4;
+        padding: 96px 64px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      /* ─── EXPLORE PROGRAMS ─────────────────────────────────────────── */
+      .explore-section {
+        background: #eef7f5;
+        padding: 80px 64px;
+        overflow-x: hidden;
+      }
+
+      .explore-wrap {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .explore-hd-title {
+        font-size: clamp(24px, 2.8vw, 38px);
+        font-weight: 800;
+        color: var(--g);
+        letter-spacing: -0.8px;
+        line-height: 1.1;
+      }
+
+      .explore-hd-sub {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 8px;
+        max-width: 520px;
+      }
+
+      /* ── CTA / explore links ── */
+      .rx-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+      }

@@ -1,0 +1,6 @@
+programme-finder-library:
+  js:
+    js/programme-data.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

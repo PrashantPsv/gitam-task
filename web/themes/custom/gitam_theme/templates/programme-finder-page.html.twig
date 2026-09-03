@@ -1,0 +1,1054 @@
+
+<style>
+    @font-face {
+      font-family: "Forma DJR Display";
+      src: url("fonts/FormaDJRDisplay-Regular-Testing.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Forma DJR Display";
+      src: url("fonts/FormaDJRDisplay-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Forma DJR Display";
+      src: url("fonts/FormaDJRDisplay-Bold-Testing.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --g: #007367;
+      --gd: #004740;
+      --gl: #8bcbb7;
+      --gold: #a58255;
+      --ink: #14201c;
+      --muted: #5a6b65;
+      --line: #e3eae7;
+      --bg: #f4f7f5;
+      --card: #ffffff;
+      --font-display: "Forma DJR Display", "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    /* ─── HEADER ─────────────────────────────── */
+    .pf-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--gd);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .pf-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .pf-brand img { height: 30px; display: block; }
+    .pf-header-right { display: flex; align-items: center; gap: 8px; }
+    .pf-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 9px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .pf-back:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .pf-apply {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 10px;
+      transition: filter 0.18s, transform 0.18s;
+    }
+    .pf-apply:hover { filter: brightness(1.07); transform: translateY(-1px); }
+
+    /* ─── HERO ───────────────────────────────── */
+    .pf-hero {
+      background: linear-gradient(135deg, var(--gd) 0%, var(--g) 100%);
+      color: #fff;
+      padding: 34px 0 88px;
+      position: relative;
+    }
+    .pf-hero-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .pf-crumb {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .pf-crumb a { color: rgba(255, 255, 255, 0.72); text-decoration: none; }
+    .pf-crumb a:hover { color: #fff; }
+    .pf-crumb span { color: rgba(255, 255, 255, 0.4); }
+    .pf-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(30px, 4.5vw, 46px);
+      margin: 0 0 10px;
+      letter-spacing: -0.5px;
+    }
+    .pf-hero p {
+      margin: 0;
+      font-size: clamp(14.5px, 1.6vw, 16.5px);
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 620px;
+      line-height: 1.55;
+    }
+
+    /* ─── MAIN ───────────────────────────────── */
+    .pf-main {
+      max-width: 1180px;
+      margin: -60px auto 0;
+      padding: 0 24px 80px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ─── APPLIED-FILTER SUMMARY (the key clarity piece) ── */
+    .pf-summary {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 18px 50px -28px rgba(0, 71, 64, 0.4);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+    }
+    .pf-summary-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pf-chips { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .pf-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #eef5f2;
+      border: 1px solid #d4e6df;
+      border-radius: 999px;
+      padding: 8px 9px 8px 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--gd);
+    }
+    .pf-chip .pf-chip-k {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--g);
+      opacity: 0.7;
+    }
+    .pf-chip-x {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: rgba(0, 71, 64, 0.1);
+      color: var(--gd);
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 1;
+      border: none;
+      transition: background 0.15s;
+    }
+    .pf-chip-x:hover { background: rgba(0, 71, 64, 0.22); }
+    .pf-chip-empty { color: var(--muted); font-weight: 500; font-size: 13.5px; }
+    .pf-clear {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: var(--g);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 4px;
+      font-family: var(--font-body);
+    }
+    .pf-clear:hover { text-decoration: underline; }
+
+    /* ─── FILTER CONTROLS ────────────────────── */
+    .pf-controls {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr 1.4fr;
+      gap: 14px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+    .pf-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+    .pf-field label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-left: 2px;
+    }
+    .pf-seg {
+      display: inline-flex;
+      background: #e8efec;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 3px;
+      gap: 3px;
+    }
+    .pf-seg button {
+      border: none;
+      background: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .pf-seg button.active { background: var(--g); color: #fff; box-shadow: 0 4px 12px -4px rgba(0, 115, 103, 0.6); }
+    .pf-select, .pf-search {
+      width: 100%;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--card);
+      padding: 0 14px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      color: var(--ink);
+      transition: border-color 0.18s, box-shadow 0.18s;
+      appearance: none;
+    }
+    .pf-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6b65' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+    .pf-search-wrap { position: relative; }
+    .pf-search { padding-left: 40px; }
+    .pf-search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .pf-select:focus, .pf-search:focus {
+      outline: none;
+      border-color: var(--g);
+      box-shadow: 0 0 0 3px rgba(0, 115, 103, 0.14);
+    }
+
+    /* ─── RESULTS ────────────────────────────── */
+    .pf-results-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .pf-results-head h2 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .pf-count { font-size: 13.5px; color: var(--muted); font-weight: 500; }
+
+    .pf-campus-block { margin-bottom: 30px; }
+    .pf-campus-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: var(--g);
+      margin: 0 0 14px;
+    }
+    .pf-campus-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .pf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .pf-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .pf-card:hover {
+      border-color: var(--gl);
+      box-shadow: 0 16px 40px -26px rgba(0, 71, 64, 0.45);
+      transform: translateY(-2px);
+    }
+    .pf-card-photo {
+      position: relative;
+      height: 168px;
+      background: linear-gradient(135deg, #0c5147, #007367);
+      overflow: hidden;
+    }
+    .pf-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pf-card-photo.pf-photo-fallback::after {
+      content: "🎓";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+    }
+    .pf-photo-badge {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(0, 38, 32, 0.78);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .pf-card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+    .pf-card-name {
+      font-family: var(--font-display);
+      font-size: 16.5px;
+      font-weight: 700;
+      line-height: 1.32;
+      margin: 0 0 12px;
+    }
+    .pf-rows { margin: 0 0 4px; padding: 0; }
+    .pf-row {
+      display: flex;
+      gap: 6px;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 3px 0;
+    }
+    .pf-row dt {
+      flex: none;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+    }
+    .pf-row dt::after { content: ":"; }
+    .pf-row dd { margin: 0; color: var(--muted); }
+    .pf-elig-toggle {
+      background: none;
+      border: none;
+      color: var(--g);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      font-family: var(--font-body);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin: 10px 0 12px;
+    }
+    .pf-elig-toggle:hover { text-decoration: underline; }
+    .pf-elig {
+      font-size: 12.8px;
+      line-height: 1.55;
+      color: var(--muted);
+      background: #f7faf8;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .pf-elig.open { display: block; }
+    .pf-card-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      margin-top: auto;
+      background: var(--g);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 11px;
+      border-radius: 11px;
+      transition: filter 0.18s;
+    }
+    .pf-card-cta:hover { filter: brightness(1.08); }
+
+    /* ─── DISCIPLINE PICKER (no discipline selected) ── */
+    .pf-pick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .pf-pick-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 22px 20px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pf-pick-card:hover {
+      border-color: var(--gl);
+      box-shadow: 0 16px 40px -26px rgba(0, 71, 64, 0.4);
+      transform: translateY(-2px);
+    }
+    .pf-pick-icon { font-size: 26px; }
+    .pf-pick-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--ink); }
+    .pf-pick-sub { font-size: 12.5px; color: var(--muted); }
+
+    /* ─── EMPTY ──────────────────────────────── */
+    .pf-empty {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+    }
+    .pf-empty strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 6px; font-family: var(--font-display); }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    .pf-foot {
+      background: var(--gd);
+      color: rgba(255, 255, 255, 0.62);
+      text-align: center;
+      font-size: 12.5px;
+      padding: 22px 24px;
+    }
+    .pf-foot a { color: var(--gl); text-decoration: none; }
+
+    @media (max-width: 820px) {
+      .pf-controls { grid-template-columns: 1fr 1fr; }
+      .pf-controls .pf-field-level { grid-column: 1 / -1; }
+      .pf-controls .pf-field-search { grid-column: 1 / -1; }
+    }
+    @media (max-width: 560px) {
+      .pf-header-inner { padding: 0 16px; }
+      .pf-hero-inner, .pf-main { padding-left: 16px; padding-right: 16px; }
+      .pf-controls { grid-template-columns: 1fr; }
+      .pf-back span { display: none; }
+      .pf-clear { margin-left: 0; }
+    }
+  </style>
+<body>
+  <header class="pf-header">
+    <div class="pf-header-inner">
+      <a class="pf-brand" href="{{ url('<front>') }}" aria-label="GITAM Home">
+        <img src="{{ directory }}/images/gitam-logo-basic-horizontal-reverse.png" alt="GITAM University" />
+      </a>
+      <div class="pf-header-right">
+        <a class="pf-back" href="{{ url('<front>') }}">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Back to home</span>
+        </a>
+        <a class="pf-apply" href="apply-page-final.html">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pf-hero">
+    <div class="pf-hero-inner">
+      <nav class="pf-crumb" aria-label="Breadcrumb">
+        <a href="{{ url('<front>') }}">Home</a><span>/</span>
+        <a href="{{ url('<front>') }}#sec-explore">Academics</a><span>/</span>
+        Programme Finder
+      </nav>
+      <h1>Programme Finder</h1>
+      <p>Explore GITAM's undergraduate and postgraduate programmes. Your selections from the home page are applied below — refine them anytime.</p>
+    </div>
+  </section>
+
+  <main class="pf-main">
+    <!-- Applied-filter summary -->
+    <div class="pf-summary">
+      <div class="pf-summary-label">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3h12M4 8h8M6 13h4" stroke="#5a6b65" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Filters applied
+      </div>
+      <div class="pf-chips" id="pfChips"></div>
+    </div>
+
+    <!-- Filter controls -->
+    <div class="pf-controls">
+      <div class="pf-field pf-field-level">
+        <label>Level</label>
+        <div class="pf-seg" id="pfLevelSeg">
+          <button data-level="ug">Undergraduate</button>
+          <button data-level="pg">Postgraduate</button>
+        </div>
+      </div>
+      <div class="pf-field">
+        <label for="pfDisc">Discipline</label>
+        <select class="pf-select" id="pfDisc"></select>
+      </div>
+      <div class="pf-field">
+        <label for="pfCampus">Campus</label>
+        <select class="pf-select" id="pfCampus"></select>
+      </div>
+      <div class="pf-field pf-field-search">
+        <label for="pfSearch">Search</label>
+        <div class="pf-search-wrap">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#5a6b65" stroke-width="1.6"/><path d="M11 11l3 3" stroke="#5a6b65" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input class="pf-search" id="pfSearch" type="text" placeholder="Search programmes…" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-results-head">
+      <h2 id="pfResultsTitle">Programmes</h2>
+      <div class="pf-count" id="pfCount"></div>
+    </div>
+
+    <div id="pfResults"></div>
+  </main>
+
+  <footer class="pf-foot">
+    © <span id="pfYear">2026</span> GITAM (Deemed to be University). Programme details are indicative —
+    <a href="{{ url('<front>') }}#sec-contact">contact admissions</a> for the latest information.
+  </footer>
+  <script>
+    (function () {
+      "use strict";
+      document.addEventListener('gitamDataReady', function () {
+      var DATA = window.GITAM_DATA || {};
+
+      /* ── ID mappings (mirror index.html's forward mapping) ── */
+      var CAMPUS_BY_ID = { 1: "hyd", 2: "vizag", 3: "blr" };
+      var CAMPUS_ID = { hyd: 1, vizag: 2, blr: 3 };
+      var CAMPUS_LABEL = { vizag: "Visakhapatnam", hyd: "Hyderabad", blr: "Bengaluru" };
+      var CAMPUS_ORDER = ["vizag", "hyd", "blr"];
+
+      // Local discipline name -> GITAM facet id (non-engineering).
+      var DISC_ID = {
+        Architecture: 17,
+        Management: 18,
+        "Humanities & Social Sciences": 19,
+        Law: 21,
+        Nursing: 23,
+        Pharmacy: 25,
+        Science: 28,
+      };
+      // GITAM facet id -> { disc, label, eng } for reverse lookup.
+      var ID_TO_DISC = {
+        17: { disc: "Architecture", label: "Architecture" },
+        18: { disc: "Management", label: "Management" },
+        19: { disc: "Humanities & Social Sciences", label: "Humanities & Social Sciences" },
+        20: { disc: "Engineering & Technology", label: "Computer Science", eng: "cs" },
+        21: { disc: "Law", label: "Law" },
+        23: { disc: "Nursing", label: "Nursing" },
+        25: { disc: "Pharmacy", label: "Pharmacy" },
+        28: { disc: "Science", label: "Science" },
+        259: { disc: "Engineering & Technology", label: "Core Engineering", eng: "core" },
+      };
+      var DISC_ICON = {
+        "Engineering & Technology": "⚙️",
+        Architecture: "📐",
+        Science: "🔬",
+        Management: "📊",
+        Pharmacy: "💊",
+        Law: "⚖️",
+        Nursing: "🩺",
+        "Humanities & Social Sciences": "📚",
+      };
+      var CS_RE = /comput|artificial intelligence|\bai\b|\bml\b|data science|information tech|software|machine learning|cyber/;
+
+      // School name per discipline (engineering split by cs/core).
+      var SCHOOL = {
+        Architecture: "GITAM School of Architecture",
+        Science: "GITAM School of Science",
+        Management: "GITAM School of Business",
+        Pharmacy: "GITAM School of Pharmacy",
+        Law: "GITAM School of Law",
+        Nursing: "GITAM School of Nursing",
+        "Humanities & Social Sciences": "GITAM School of Humanities & Social Sciences",
+      };
+      function schoolName(info) {
+        if (info.eng === "cs") return "GITAM School of Computer Science & Engineering";
+        if (info.eng === "core") return "GITAM School of Technology";
+        return SCHOOL[info.disc] || "GITAM University";
+      }
+
+      // Photo pools (stable Unsplash CDN) keyed by discipline / engineering branch.
+      var PHOTOS = {
+        cs: ["1517694712202-14dd9538aa97", "1515879218367-8466d910aaa4", "1498050108023-c5249f4df085"],
+        core: ["1581091226825-a6a2a5aee158", "1581092160562-40aa08e78837", "1518770660439-4636190af475"],
+        Architecture: ["1503387762-592deb58ef4e", "1487958449943-2429e8be8625", "1486718448742-163732cd1544"],
+        Science: ["1532094349884-543bc11b234d", "1582719478250-c89cae4dc85b", "1554475901-4538ddfbccc2"],
+        Management: ["1454165804606-c3d57bc86b40", "1521737604893-d14cc237f11d", "1600880292203-757bb62b4baf"],
+        Pharmacy: ["1576602976047-174e57a47881", "1631549916768-4119b2e5f926"],
+        Law: ["1589829545856-d10d557cf95f", "1505664194779-8beaceb93744"],
+        Nursing: ["1576091160550-2173dba999ef", "1612349317150-e413f6a5b16d"],
+        "Humanities & Social Sciences": ["1481627834876-b7833e8f5570", "1457369804613-52c61a468e7d"],
+      };
+      function photoUrl(info, idx) {
+        var key = info.eng ? info.eng : info.disc;
+        var pool = PHOTOS[key] || PHOTOS.Science;
+        var id = pool[idx % pool.length];
+        return "https://images.unsplash.com/photo-" + id + "?auto=format&fit=crop&w=640&q=72";
+      }
+
+      /* ── State (driven by URL params) ── */
+      var state = { level: "ug", discId: null, campusId: null, q: "" };
+
+      function readUrl() {
+        var p = new URLSearchParams(window.location.search);
+        var lvl = (p.get("field_course_level_value_selective") || "").toLowerCase();
+        state.level = lvl === "pg" ? "pg" : "ug";
+        var d = parseInt(p.get("field_discipline_target_id_selective"), 10);
+        state.discId = ID_TO_DISC[d] ? d : null;
+        var c = parseInt(p.get("field_campus_target_id"), 10);
+        state.campusId = CAMPUS_BY_ID[c] ? c : null;
+        state.q = p.get("q") || "";
+        // Drop a discipline that doesn't exist for the chosen level.
+        if (state.discId && !discExistsForLevel(state.discId, state.level)) {
+          state.discId = null;
+        }
+      }
+
+      function writeUrl(replace) {
+        var params = [];
+        if (state.campusId) params.push("field_campus_target_id=" + state.campusId);
+        if (state.discId) params.push("field_discipline_target_id_selective=" + state.discId);
+        params.push("field_course_level_value_selective=" + state.level);
+        if (state.q.trim()) params.push("q=" + encodeURIComponent(state.q.trim()));
+        // Use the live pathname (not a hardcoded one) so clean-URL hosts
+        // that serve this page as /programme-finder keep working.
+        var url = window.location.pathname + (params.length ? "?" + params.join("&") : "");
+        if (window.history && window.history.replaceState) {
+          window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+        }
+      }
+
+      function discExistsForLevel(id, level) {
+        var info = ID_TO_DISC[id];
+        return info && DATA[level] && DATA[level][info.disc];
+      }
+
+      /* ── Build the discipline option list for the current level ── */
+      function disciplineOptions(level) {
+        var discs = DATA[level] ? Object.keys(DATA[level]) : [];
+        var opts = [];
+        discs.sort().forEach(function (d) {
+          if (d === "Engineering & Technology") {
+            // Split into the two GITAM facets, matching the home page.
+            opts.push({ id: 20, label: "Computer Science" });
+            opts.push({ id: 259, label: "Core Engineering" });
+          } else if (DISC_ID[d]) {
+            opts.push({ id: DISC_ID[d], label: d });
+          }
+        });
+        return opts;
+      }
+
+      /* ── Programme matching ── */
+      function programsFor(level, discId, campusId, q) {
+        var info = ID_TO_DISC[discId];
+        if (!info || !DATA[level] || !DATA[level][info.disc]) return [];
+        var progs = DATA[level][info.disc].programs || {};
+        var campusKey = campusId ? CAMPUS_BY_ID[campusId] : null;
+        var query = (q || "").trim().toLowerCase();
+        var out = [];
+        Object.keys(progs).forEach(function (name) {
+          var p = progs[name];
+          // Engineering CS/Core split
+          if (info.eng) {
+            var isCs = CS_RE.test(name.toLowerCase());
+            if (info.eng === "cs" && !isCs) return;
+            if (info.eng === "core" && isCs) return;
+          }
+          if (campusKey && p.campuses.indexOf(campusKey) === -1) return;
+          if (query && name.toLowerCase().indexOf(query) === -1) return;
+          out.push({ name: name, data: p });
+        });
+        return out;
+      }
+
+      /* ── Helpers ── */
+      function fmtFee(n) { return "₹ " + n.toLocaleString("en-IN"); }
+
+      function feeFor(p, campusKey) {
+        if (campusKey && p.campusFee && p.campusFee[campusKey]) return p.campusFee[campusKey].total;
+        if (p.fee && typeof p.fee.total === "number") return p.fee.total;
+        return null;
+      }
+      function eligFor(p, campusKey) {
+        if (campusKey && p.campusElig && p.campusElig[campusKey]) return p.campusElig[campusKey];
+        return p.elig || "";
+      }
+      function ProImgUrl(p, campusKey) {
+        console.log(p)
+        if (campusKey && p.proImg && p.proImg[campusKey]) return p.proImg[campusKey];
+        return p.proImg || "";
+      }
+
+      /* ── Render: applied-filter chips ── */
+      function renderChips() {
+        var wrap = document.getElementById("pfChips");
+        wrap.innerHTML = "";
+        var chips = [];
+        chips.push({ k: "Level", v: state.level === "pg" ? "Postgraduate" : "Undergraduate", clear: null });
+        if (state.discId) {
+          chips.push({ k: "Discipline", v: ID_TO_DISC[state.discId].label, clear: "disc" });
+        }
+        if (state.campusId) {
+          chips.push({ k: "Campus", v: CAMPUS_LABEL[CAMPUS_BY_ID[state.campusId]], clear: "campus" });
+        }
+        if (state.q.trim()) {
+          chips.push({ k: "Course", v: state.q.trim(), clear: "q" });
+        }
+
+        chips.forEach(function (c) {
+          var el = document.createElement("span");
+          el.className = "pf-chip";
+          el.innerHTML = '<span class="pf-chip-k">' + c.k + "</span>" + escapeHtml(c.v);
+          if (c.clear) {
+            var x = document.createElement("button");
+            x.className = "pf-chip-x";
+            x.setAttribute("aria-label", "Remove " + c.k + " filter");
+            x.innerHTML = "&times;";
+            x.addEventListener("click", function () {
+              if (c.clear === "disc") state.discId = null;
+              if (c.clear === "campus") state.campusId = null;
+              if (c.clear === "q") {
+                state.q = "";
+                document.getElementById("pfSearch").value = "";
+              }
+              syncAndRender();
+            });
+            el.appendChild(x);
+          }
+          wrap.appendChild(el);
+        });
+
+        if (!state.discId && !state.campusId) {
+          var note = document.createElement("span");
+          note.className = "pf-chip-empty";
+          note.textContent = "Showing all disciplines — pick one to narrow your search.";
+          wrap.appendChild(note);
+        }
+
+        if (state.discId || state.campusId || state.q.trim()) {
+          var clr = document.createElement("button");
+          clr.className = "pf-clear";
+          clr.textContent = "Clear filters";
+          clr.addEventListener("click", function () {
+            state.discId = null;
+            state.campusId = null;
+            state.q = "";
+            document.getElementById("pfSearch").value = "";
+            syncAndRender();
+          });
+          wrap.appendChild(clr);
+        }
+      }
+
+      /* ── Render: filter controls ── */
+      function renderControls() {
+        // Level segmented control
+        document.querySelectorAll("#pfLevelSeg button").forEach(function (b) {
+          b.classList.toggle("active", b.getAttribute("data-level") === state.level);
+        });
+        // Discipline select
+        var discSel = document.getElementById("pfDisc");
+        discSel.innerHTML = '<option value="">All disciplines</option>';
+        disciplineOptions(state.level).forEach(function (o) {
+          var opt = document.createElement("option");
+          opt.value = o.id;
+          opt.textContent = o.label;
+          if (state.discId === o.id) opt.selected = true;
+          discSel.appendChild(opt);
+        });
+        // Campus select
+        var campSel = document.getElementById("pfCampus");
+        campSel.innerHTML = '<option value="">All campuses</option>';
+        CAMPUS_ORDER.forEach(function (c) {
+          var opt = document.createElement("option");
+          opt.value = CAMPUS_ID[c];
+          opt.textContent = CAMPUS_LABEL[c];
+          if (state.campusId === CAMPUS_ID[c]) opt.selected = true;
+          campSel.appendChild(opt);
+        });
+      }
+
+      /* ── Render: results ── */
+      function renderResults() {
+        var host = document.getElementById("pfResults");
+        var title = document.getElementById("pfResultsTitle");
+        var count = document.getElementById("pfCount");
+        host.innerHTML = "";
+
+        if (!state.discId) {
+          // Discipline picker
+          title.textContent = "Choose a discipline";
+          count.textContent = "";
+          var picker = document.createElement("div");
+          picker.className = "pf-pick-grid";
+          disciplineOptions(state.level).forEach(function (o) {
+            var info = ID_TO_DISC[o.id];
+            var n = programsFor(state.level, o.id, state.campusId, "").length;
+            var card = document.createElement("button");
+            card.className = "pf-pick-card";
+            card.innerHTML =
+              '<div class="pf-pick-icon">' + (DISC_ICON[info.disc] || "🎓") + "</div>" +
+              '<div class="pf-pick-name">' + escapeHtml(o.label) + "</div>" +
+              '<div class="pf-pick-sub">' + n + " programme" + (n === 1 ? "" : "s") + "</div>";
+            card.addEventListener("click", function () {
+              state.discId = o.id;
+              syncAndRender();
+            });
+            picker.appendChild(card);
+          });
+          host.appendChild(picker);
+          return;
+        }
+
+        var matches = programsFor(state.level, state.discId, state.campusId, state.q);
+        title.textContent = ID_TO_DISC[state.discId].label + " programmes";
+        count.textContent =
+          matches.length + " programme" + (matches.length === 1 ? "" : "s") +
+          (state.campusId ? " at " + CAMPUS_LABEL[CAMPUS_BY_ID[state.campusId]] : "");
+
+        if (!matches.length) {
+          host.innerHTML =
+            '<div class="pf-empty"><strong>No programmes match these filters</strong>' +
+            "Try a different campus, discipline, or clear your search.</div>";
+          return;
+        }
+
+        // Group by campus (only the selected one, or all relevant campuses).
+        var campusesToShow = state.campusId
+          ? [CAMPUS_BY_ID[state.campusId]]
+          : CAMPUS_ORDER.filter(function (c) {
+              return matches.some(function (m) { return m.data.campuses.indexOf(c) !== -1; });
+            });
+
+        if (campusesToShow.length === 1) {
+          host.appendChild(buildGrid(matches, campusesToShow[0]));
+        } else {
+          campusesToShow.forEach(function (c) {
+            var here = matches.filter(function (m) { return m.data.campuses.indexOf(c) !== -1; });
+            if (!here.length) return;
+            var block = document.createElement("div");
+            block.className = "pf-campus-block";
+            var h = document.createElement("h3");
+            h.className = "pf-campus-title";
+            h.textContent = CAMPUS_LABEL[c] + " · " + here.length;
+            block.appendChild(h);
+            block.appendChild(buildGrid(here, c));
+            host.appendChild(block);
+          });
+        }
+      }
+
+      function buildGrid(matches, campusKey) {
+        var grid = document.createElement("div");
+        grid.className = "pf-grid";
+        var info = ID_TO_DISC[state.discId];
+        var levelLabel = state.level === "pg" ? "Postgraduate" : "Undergraduate";
+        var school = schoolName(info);
+
+        matches.forEach(function (m, idx) {
+          var p = m.data;
+          var fee = feeFor(p, campusKey);
+          var elig = eligFor(p, campusKey);
+          var imgurl = ProImgUrl(p, campusKey);
+          // School line names a campus; use the filtered campus, else the first available.
+          var campusForLine = campusKey || p.campuses[0];
+          var card = document.createElement("div");
+          card.className = "pf-card";
+
+          var html =
+            '<div class="pf-card-photo">' +
+              '<img loading="lazy" alt="" src="' + ProImgUrl(p, campusKey) + '" ' +
+                'onerror="this.style.display=\'none\';this.parentNode.classList.add(\'pf-photo-fallback\')" />' +
+              '<span class="pf-photo-badge">' + escapeHtml(info.label) + "</span>" +
+            "</div>" +
+            '<div class="pf-card-body">' +
+              '<h4 class="pf-card-name">' + escapeHtml(m.name) + "</h4>" +
+              '<dl class="pf-rows">' +
+                row("School", school + " - " + CAMPUS_LABEL[campusForLine]) +
+                row("Discipline", info.label) +
+                row("Programme Level", levelLabel) +
+                (p.dur ? row("Duration", p.dur) : "") +
+                (fee != null ? row("Tuition", fmtFee(fee) + " / year") : "") +
+              "</dl>";
+
+          if (elig) {
+            html +=
+              '<button class="pf-elig-toggle" type="button">▾ Eligibility</button>' +
+              '<div class="pf-elig">' + escapeHtml(elig) + "</div>";
+          }
+
+          html +=
+            '<a class="pf-card-cta" href="apply-page-final.html">Know More ' +
+              '<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+            "</a>" +
+            "</div>";
+
+          card.innerHTML = html;
+
+          var tog = card.querySelector(".pf-elig-toggle");
+          if (tog) {
+            tog.addEventListener("click", function () {
+              var box = card.querySelector(".pf-elig");
+              var open = box.classList.toggle("open");
+              tog.textContent = (open ? "▴" : "▾") + " Eligibility";
+            });
+          }
+
+          grid.appendChild(card);
+        });
+        return grid;
+      }
+
+      function row(k, v) {
+        return (
+          '<div class="pf-row"><dt>' + escapeHtml(k) + "</dt><dd>" + escapeHtml(v) + "</dd></div>"
+        );
+      }
+
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+
+      /* ── Sync state -> URL + all renders ── */
+      function syncAndRender() {
+        writeUrl(true);
+        renderChips();
+        renderControls();
+        renderResults();
+      }
+
+      /* ── Events ── */
+      function bind() {
+        document.querySelectorAll("#pfLevelSeg button").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var lvl = b.getAttribute("data-level");
+            if (lvl === state.level) return;
+            state.level = lvl;
+            // Keep discipline only if it still exists at the new level.
+            if (state.discId && !discExistsForLevel(state.discId, state.level)) {
+              state.discId = null;
+            }
+            syncAndRender();
+          });
+        });
+        document.getElementById("pfDisc").addEventListener("change", function () {
+          state.discId = this.value ? parseInt(this.value, 10) : null;
+          syncAndRender();
+        });
+        document.getElementById("pfCampus").addEventListener("change", function () {
+          state.campusId = this.value ? parseInt(this.value, 10) : null;
+          syncAndRender();
+        });
+        var searchT;
+        document.getElementById("pfSearch").addEventListener("input", function () {
+          var v = this.value;
+          clearTimeout(searchT);
+          searchT = setTimeout(function () {
+            state.q = v;
+            writeUrl(true);
+            renderChips();
+            renderResults();
+          }, 120);
+        });
+        window.addEventListener("popstate", function () {
+          readUrl();
+          document.getElementById("pfSearch").value = state.q;
+          renderChips();
+          renderControls();
+          renderResults();
+        });
+      }
+
+      /* ── Init ── */
+      readUrl();
+      document.getElementById("pfSearch").value = state.q;
+      writeUrl(true);
+      renderChips();
+      renderControls();
+      renderResults();
+      bind();
+
+      });
+    })();
+  </script>
+</body>
+

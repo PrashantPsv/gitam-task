@@ -1,0 +1,38 @@
+global-styling:
+  css:
+    theme:
+      css/font.css: {}
+      css/bootstrap.min.css: {}
+      css/variables.css: {}
+      css/base.css: {}
+      css/utilities.css: {}
+      css/shell.css: {}
+      css/sections/hero.css: {}
+      css/sections/campuses.css: {}
+      css/sections/disciplines.css: {}
+      css/sections/accreditations.css: {}
+      css/sections/explore.css: {}
+      css/sections/placements.css: {}
+      css/sections/highered.css: {}
+      css/sections/partnerships.css: {}
+      css/sections/entrepreneurs.css: {}
+      css/sections/beyond.css: {}
+      css/sections/faculty.css: {}
+      css/sections/research.css: {}
+      css/sections/hostels.css: {}
+      css/sections/testimonials.css: {}
+      css/sections/socialwall.css: {}
+      css/sections/contact.css: {}
+      css/responsive.css: {}
+      css/bootstrap-overrides.css: {}
+      css/custom.css: {}
+  js:
+    # Add your custom JS scripts here if any, e.g.:
+    js/jquery.min.js: {}
+    js/programme-data.js: {}
+    js/bootstrap.bundle.min.js: {}
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

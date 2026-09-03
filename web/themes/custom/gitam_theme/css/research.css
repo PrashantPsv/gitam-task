@@ -1,0 +1,396 @@
+
+
+      /* ─── RESEARCH & INNOVATION ──────────────────────────
+       Editorial dark-canvas section. Built on GITAM's real
+       R&I framework: SPARC / GUARD / MURTI + 6 MURTI themes.
+       All class names use the rx- prefix.
+    */
+      #sec-research {
+        position: relative;
+        background: #020e08;
+        isolation: isolate;
+        border-top: 1px solid rgba(139, 203, 183, 0.2);
+        box-shadow: inset 0 1px 0 rgba(139, 203, 183, 0.07), 0 -1px 40px rgba(0,0,0,0.6);
+      }
+
+      /* compact content so each slide fits one viewport */
+      .rxd-on .rx-head { margin-bottom: 26px; }
+      .rxd-on .rx-hero { margin-bottom: 0; }
+      .rxd-on .rx-hero-img,
+      .rxd-on .rx-hero-video { height: clamp(280px, 46vh, 480px); }
+      .rxd-on .rx-stats,
+      .rxd-on .rx-engine,
+      .rxd-on .rx-themes { margin-bottom: 0; }
+      .rxd-on .rx-pillar,
+      .rxd-on .rx-pillar-body { min-height: clamp(240px, 44vh, 380px); }
+      .rxd-on .rx-cta { border-top: none; padding-top: 28px; }
+
+      /* ── header (light variant for dark canvas) ── */
+      .rx-head {
+        max-width: 720px;
+        margin-bottom: 40px;
+      }
+      .rx-head .section-tag {
+        color: var(--gl);
+      }
+      .rx-head .section-title {
+        color: #fff;
+        font-weight: 700;
+      }
+      .rx-head .section-title span {
+        color: var(--gl);
+      }
+      .rx-head .section-sub {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 15px;
+        max-width: 600px;
+      }
+
+      /* ── hero video/image band ── */
+      .rx-hero {
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+        margin-bottom: 18px;
+        background: #001510;
+      }
+      .rx-hero-video {
+        display: block;
+        width: 100%;
+        height: 580px;
+        object-fit: cover;
+        object-position: center 35%;
+      }
+      .rx-hero-video { cursor: default; }
+      .rx-yt-wrap { position: relative; overflow: hidden; }
+      .rx-yt-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 0;
+        pointer-events: none;
+      }
+      /* fullscreen / play control */
+      .rx-hero-fs {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 3;
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-radius: 12px;
+        color: #fff;
+        background: rgba(2, 12, 9, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+      .rx-hero-fs:hover {
+        background: rgba(2, 12, 9, 0.7);
+        border-color: var(--gl);
+        transform: translateY(-1px);
+      }
+      .rx-hero-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 38px 40px;
+        /* light bottom-only scrim — keeps the video visible while text stays legible */
+        background: linear-gradient(
+          0deg,
+          rgba(2, 12, 9, 0.78) 0%,
+          rgba(2, 12, 9, 0.32) 24%,
+          transparent 48%
+        );
+        pointer-events: none;
+      }
+      .rx-hero-title{
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+      }
+      .rx-hero-tag {
+        align-self: flex-start;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: #06140f;
+        background: var(--gl);
+        padding: 5px 12px;
+        border-radius: 100px;
+        margin-bottom: 14px;
+      }
+      .rx-hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(22px, 2.6vw, 32px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+        max-width: 640px;
+        margin: 0 0 8px;
+      }
+      .rx-stat-num {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 2.3vw, 34px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -1.2px;
+        color: #fff;
+        display: flex;
+        align-items: baseline;
+        gap: 1px;
+      }
+      .rx-stat-num .rx-unit {
+        font-size: 0.46em;
+        font-weight: 800;
+        color: var(--gl);
+        letter-spacing: 0;
+      }
+
+      /* ── section sub-heading (eyebrow inside dark canvas) ── */
+      .rx-subhead {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--gl);
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .rx-subhead::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(139, 203, 183, 0.3),
+          transparent
+        );
+      }
+
+      /* ── the research engine: 3 pillars ── */
+      .rx-engine {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 56px;
+      }
+      .rx-pillar {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        border-radius: 18px;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid rgba(139, 203, 183, 0.15);
+        transition:
+          transform 0.28s ease,
+          border-color 0.28s ease,
+          box-shadow 0.28s ease;
+        min-height: 380px;
+      }
+      .rx-pillar:hover {
+        transform: translateY(-4px);
+        border-color: rgba(139, 203, 183, 0.4);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
+      }
+      /* full-bleed image fills the entire card */
+      .rx-pillar-img {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .rx-pillar-img::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(2, 12, 9, 0.95) 0%,
+          rgba(2, 12, 9, 0.75) 16%,
+          rgba(2, 12, 9, 0.2) 34%,
+          transparent 48%
+        );
+        z-index: 1;
+      }
+      .rx-pillar-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .rx-pillar:hover .rx-pillar-img img {
+        transform: scale(1.07);
+      }
+      /* text overlaid at the bottom of the image */
+      .rx-pillar-body {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 380px;
+        padding: 28px 26px;
+      }
+      .rx-pillar-abbr {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 2.6vw, 38px);
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .rx-pillar-full {
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--gl);
+        letter-spacing: 0.2px;
+        margin-bottom: 12px;
+      }
+      /* card copy is title + tagline + link only — the longer blurb reads as
+         clutter over a photo and forces a heavier gradient scrim to stay
+         legible, so it's dropped at every breakpoint. */
+      .rx-pillar-desc {
+        display: none;
+      }
+      .rx-pillar-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .rx-pillar-link svg {
+        transition: transform 0.25s ease;
+      }
+      .rx-pillar:hover .rx-pillar-link {
+        color: #fff;
+      }
+      .rx-pillar:hover .rx-pillar-link svg {
+        transform: translateX(4px);
+      }
+
+      /* ── MURTI themes grid ── */
+      .rx-themes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-bottom: 48px;
+      }
+      .rx-theme {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 28px 26px 26px;
+        border-radius: 18px;
+        background: linear-gradient(145deg, rgba(0,42,34,0.6) 0%, rgba(0,18,14,0.8) 100%);
+        border: 1px solid rgba(139, 203, 183, 0.12);
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        min-height: 160px;
+      }
+      .rx-theme:hover {
+        background: linear-gradient(145deg, rgba(0,60,46,0.7) 0%, rgba(0,30,22,0.85) 100%);
+        border-color: rgba(139, 203, 183, 0.32);
+        transform: translateY(-3px);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      }
+      .rx-theme-ico {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(139, 203, 183, 0.12);
+        border: 1px solid rgba(139, 203, 183, 0.22);
+        color: var(--gl);
+        margin-bottom: 18px;
+      }
+      .rx-theme-ico svg {
+        width: 26px;
+        height: 26px;
+      }
+      .rx-theme-name {
+        font-size: 16px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.3px;
+        margin-bottom: 6px;
+        line-height: 1.2;
+      }
+      .rx-theme-desc {
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.52);
+      }
+      .rx-cta-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+      }
+      .rx-cta-text strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .rx-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .rx-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 11px 18px;
+        border-radius: 100px;
+        color: rgba(255, 255, 255, 0.82);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition:
+          background 0.22s,
+          border-color 0.22s,
+          color 0.22s,
+          transform 0.22s;
+      }
+      .rx-link-btn:hover {
+        background: rgba(139, 203, 183, 0.14);
+        border-color: rgba(139, 203, 183, 0.45);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .rx-link-btn--primary {
+        color: #06140f;
+        background: var(--gl);
+        border-color: var(--gl);
+      }
+      .rx-link-btn--primary:hover {
+        background: #fff;
+        border-color: #fff;
+        color: #06140f;
+      }
+
+.rx-stat-num {
+  font-size: clamp(26px, 2.4vw, 36px) !important;
+  letter-spacing: -1.5px !important;
+}

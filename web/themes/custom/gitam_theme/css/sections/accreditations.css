@@ -1,0 +1,196 @@
+
+      /* ─── SECTION 4: ACCREDITATIONS ────────────────── */
+      .accred-section {
+        background: #fff;
+        padding: 56px 0 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+      }
+
+      .accred-header {
+        padding: 0 64px 32px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .accred-tag {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--g);
+        margin-bottom: 12px;
+      }
+
+      .accred-heading {
+        font-family: var(--font-body);
+        font-size: clamp(26px, 3vw, 40px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -1px;
+        line-height: 1.1;
+      }
+
+      .accred-heading em {
+        color: var(--g);
+        font-style: italic;
+      }
+
+      .accred-view-all {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--g);
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        flex-shrink: 0;
+        padding-bottom: 4px;
+        transition: opacity 0.2s;
+      }
+
+      .accred-view-all:hover {
+        opacity: 0.75;
+      }
+
+      .accred-track-wrap {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .accred-track-wrap::before,
+      .accred-track-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .accred-track-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, #fff, transparent);
+      }
+
+      .accred-track-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, #fff, transparent);
+      }
+
+      .accred-track {
+        display: flex;
+        align-items: stretch;
+        width: max-content;
+        animation: scroll-left 40s linear infinite;
+        gap: 14px;
+        padding: 4px 20px 20px;
+      }
+
+      .accred-track-wrap:hover .accred-track {
+        animation-play-state: paused;
+      }
+
+      .accred-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 20px 28px;
+        background: #fff;
+        border: 1.5px solid rgba(0, 0, 0, 0.09);
+        border-radius: 14px;
+        min-width: 160px;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .accred-item:hover {
+        border-color: var(--g);
+        box-shadow: 0 4px 20px rgba(0, 115, 103, 0.12);
+      }
+
+      .accred-logo {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .accred-logo img {
+        width: auto;
+        height: 44px;
+        max-width: 80px;
+        object-fit: contain;
+      }
+
+      .accred-logo-text {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-body);
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: var(--g);
+      }
+
+      .accred-value {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--g);
+        line-height: 1.1;
+      }
+
+      .accred-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink);
+        text-align: center;
+      }
+
+      .accred-detail {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .accred-stats-bar {
+        background: #003d34;
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .accred-stat {
+        padding: 32px 20px;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .accred-stat:last-child {
+        border-right: none;
+      }
+
+      .accred-stat-num {
+        font-size: clamp(26px, 2.8vw, 40px);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .accred-stat-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.45;
+      }

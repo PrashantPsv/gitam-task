@@ -1,0 +1,68 @@
+/* ══════════════════════════════════════════════════════════════════
+   GITAM — Global stylesheet (css/style.css)
+   Loads AFTER css/bootstrap.min.css; the universal reset below
+   intentionally re-neutralizes Bootstrap Reboot to preserve the
+   original design.
+
+   Cascade note: the merged admissions-sections block sits BEFORE the
+   main block and merged chat-fab-fix sits AFTER it — this mirrors the
+   original <link>/<style> order on the one-page site, main nav + mega menus, mobile drawer,
+         page-nav dock, mobile bottom nav, chat FAB, footer, modal
+     04  Page sections (site order): hero, stats, campuses,
+         disciplines, accreditations, explore, placements, higher-ed,
+         partnerships, entrepreneurs, beyond, faculty, research,
+         hostels, activities, testimonials, social wall, entrepreneurs, beyond-the-resume.
+ * Matches testadmissions.gitam.edu/custom-applylogin-new.css for mobile parity.
+ */
+:root {
+  --adm-img: "https://testadmissions.gitam.edu/images/applyloginimages";
+}
+
+/* ══ 02–05 MAIN STYLES (ported verbatim from index.html) ══ */
+      @font-face {
+        font-family: "Forma DJR Display";
+        src: url("../fonts/FormaDJRDisplay-Regular-Testing.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Forma DJR Display";
+        src: url("../fonts/FormaDJRDisplay-Medium.otf") format("opentype");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Forma DJR Display";
+        src: url("../fonts/FormaDJRDisplay-Bold-Testing.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      } 
+
+      :root {
+        --g: #007367;
+        --gd: #004740;
+        --gl: #8bcbb7;
+        --aw: #f4e4c9;
+        --gold: #a58255;
+        --beige: #ccba8d;
+        --yellow: #e0b541;
+        --blue: #5e95cd;
+        --coral: #dd736e;
+        --ink: #111110;
+        --muted: #5a5a52;
+        /* --font-display: "Forma DJR Display", "Inter", sans-serif;
+        --font-body: "Inter", sans-serif; */
+
+         --font-display: "Forma DJR Display", "Inter", sans-serif;
+        --font-body: "Inter Bold";
+        --font-body-reg:"Inter Regular";
+      }
+
+/* Composed pages (admissions{
+  padding: clamp(72px, 10vw, 130px) clamp(20px, 5vw, 64px);
+}

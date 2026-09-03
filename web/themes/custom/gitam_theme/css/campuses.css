@@ -1,0 +1,295 @@
+
+      /* ─── SECTION 3: CAMPUSES ──────────────────────── */
+      .campuses-section {
+        background: #fff;
+        padding: 72px 64px;
+      }
+
+      .campuses-header {
+        margin-bottom: 40px;
+      }
+
+      .campuses-title {
+        font-family: var(--font-body);
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -1px;
+        line-height: 1.1;
+      }
+
+      .campuses-title span {
+        color: var(--g);
+      }
+
+      /* .campuses-grid migrated to Bootstrap grid (.row.g-3 + .col-6.col-sm-3 in markup) */
+
+      .campus-card {
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 0;
+        transition: transform 0.25s;
+      }
+
+      .campus-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .campus-photo {
+        width: 100%;
+        aspect-ratio: 3/4;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .campus-card:nth-child(1) .campus-photo {
+        background: linear-gradient(
+          160deg,
+          #004740 0%,
+          #007367 50%,
+          #3a9e82 100%
+        );
+      }
+
+      .campus-card:nth-child(2) .campus-photo {
+        background: linear-gradient(
+          160deg,
+          #003a35 0%,
+          #005548 45%,
+          #007060 100%
+        );
+      }
+
+      .campus-card:nth-child(3) .campus-photo {
+        background: linear-gradient(
+          160deg,
+          #004032 0%,
+          #006655 50%,
+          #008870 100%
+        );
+      }
+
+      .campus-card:nth-child(4) .campus-photo {
+        background: linear-gradient(
+          160deg,
+          #002e28 0%,
+          #004d40 50%,
+          #006655 100%
+        );
+      }
+
+      .campus-photo-texture {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(244, 228, 201, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+      }
+
+      .campus-photo-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 25, 20, 0.7) 0%,
+          transparent 50%
+        );
+      }
+
+      .campus-year {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(244, 228, 201, 0.15);
+        border: 1px solid rgba(244, 228, 201, 0.25);
+        backdrop-filter: blur(6px);
+        border-radius: 100px;
+        padding: 4px 12px;
+        font-size: 10.5px;
+        font-weight: 500;
+        color: rgba(244, 228, 201, 0.9);
+      }
+
+      .campus-city-overlay {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        right: 14px;
+      }
+
+      .campus-city-name {
+        font-family: var(--font-body);
+        font-size: clamp(17px, 1.75vw, 24px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.4px;
+        line-height: 1.05;
+        display: block;
+        max-width: 100%;
+      }
+
+      .campus-city-sub {
+        font-size: 11px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.65);
+        margin-top: 3px;
+        display: block;
+      }
+
+      .campus-info {
+        padding: 16px 18px;
+        background: var(--aw);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex: 1;
+        min-height: 72px;
+      }
+
+      .campus-info-text {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .campus-acres {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--gd);
+        display: block;
+      }
+
+      .campus-acres-label {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 1px;
+        line-height: 1.35;
+        min-height: 2.7em;
+      }
+
+      .campus-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(0, 115, 103, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        align-self: center;
+        transition: background 0.2s;
+      }
+
+      .campus-card:hover .campus-arrow {
+        background: var(--g);
+      }
+
+      .campus-arrow svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      .campus-card:hover .campus-arrow svg path {
+        stroke: #fff;
+      }
+      /* ════════════════════════════════════════════════════════════
+       SCROLL REVEAL — sections fade/slide in as they enter view.
+       Pattern adapted from new-home-page-with-transitions.html.
+       Targets are hidden before first paint via html.anim (set
+       synchronously in <head>), then get .in added by the observer.
+       ════════════════════════════════════════════════════════════ */
+
+      /* Block reveal: header / intro blocks rise + fade in as one unit */
+      html.anim
+        :is(
+          .explore-hd-title,
+          .explore-hd-sub,
+          .campuses-header,
+          .accred-header,
+          .placements-header,
+          .recruiters-hero,
+          .higher-ed-header,
+          .entre-header,
+          .beyond-header,
+          .fac-head,
+          .disc-head,
+          .hostels-hero-inner,
+          .eee-header,
+          .tm-intro,
+          .section-hd
+        ) {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+          transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      html.anim
+        :is(
+          .explore-hd-title,
+          .explore-hd-sub,
+          .campuses-header,
+          .accred-header,
+          .placements-header,
+          .recruiters-hero,
+          .higher-ed-header,
+          .entre-header,
+          .beyond-header,
+          .fac-head,
+          .disc-head,
+          .hostels-hero-inner,
+          .eee-header,
+          .tm-intro,
+          .section-hd
+        ).in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Group reveal: grid children stagger in one after another */
+      html.anim
+        :is(
+          .why-grid,
+          .campuses-grid,
+          .he-grid,
+          .entre-bento,
+          .beyond-bento,
+          .eee-grid,
+          .contact-grid
+        )
+        > * {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      html.anim
+        :is(
+          .why-grid,
+          .campuses-grid,
+          .he-grid,
+          .entre-bento,
+          .beyond-bento,
+          .eee-grid,
+          .contact-grid
+        ).in
+        > * {
+        opacity: 1;
+        transform: none;
+      }

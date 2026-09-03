@@ -1,0 +1,1341 @@
+
+      /* ─── SKIP LINK ──────────────────────────────────── */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 16px;
+        z-index: 9999;
+        background: var(--g);
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 16px;
+      }
+
+      /* ─── AICTE COMPLIANCE TOP BAR ───────────────────── */
+      .aicte-bar {
+        background: var(--gd);
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        min-height: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 11px;
+        overflow: hidden;
+      }
+      .aicte-links-wrap {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        min-width: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .aicte-links {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        width: max-content;
+      }
+      .aicte-links li {
+        padding: 0 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .aicte-links li:last-child {
+        border-right: none;
+      }
+      .aicte-links a {
+        font-size: 11px;
+        font-weight: 500;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        letter-spacing: 0.2px;
+        transition: color 0.2s;
+      }
+      .aicte-links a:hover,
+      .aicte-links a:focus {
+        color: #fff;
+      }
+      .aicte-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+        padding: 0 20px 0 16px;
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .aicte-right a {
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .aicte-right a:hover {
+        color: #fff;
+      }
+      .font-resize {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .font-resize button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-family: inherit;
+        line-height: 1;
+        transition: background 0.2s;
+        touch-action: manipulation;
+      }
+      .font-resize button:hover,
+      .font-resize button:focus-visible {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .sep {
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 10px;
+      }
+      /* Desktop top bar only; mobile uses .font-resize--drawer in the menu */
+      .font-resize--drawer {
+        display: none;
+      }
+
+      /* ─── MAIN NAV ────────────────────────────────────── */
+      .main-nav {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 48px;
+        height: 64px;
+        background: rgba(0, 47, 40, 0.94);
+        backdrop-filter: blur(20px) saturate(1.8);
+        -webkit-backdrop-filter: blur(20px) saturate(1.8);
+        border-bottom: 1px solid rgba(244, 228, 201, 0.1);
+        transition: box-shadow 0.3s;
+      }
+      .main-nav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+      }
+      .nav-brand {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-brand-logo {
+        display: block;
+        width: 145px;
+        height: auto;
+        max-height: 42px;
+        object-fit: contain;
+        object-position: left center;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        letter-spacing: 0.1px;
+        transition: color 0.2s, border-color 0.2s;
+        position: relative;
+        white-space: nowrap;
+        padding: 6px 0;
+        border-bottom: 2px solid transparent;
+      }
+      .nav-links a::after {
+        display: none;
+      }
+      .nav-links > li > a:hover,
+      .has-mega:hover > .nav-toggle,
+      .has-mega.mega-open > .nav-toggle {
+        color: #ffffff;
+        border-bottom-color: #ffffff;
+      }
+      .nav-links a:hover::after {
+        display: none;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-apply {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #F4E4C9;
+        color: #004740 !important;
+        padding: 0 22px;
+        height: 44px;
+        border-radius: 8px;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        -webkit-text-stroke: 0.4px #004740;
+        text-decoration: none;
+        white-space: nowrap;
+        box-shadow: none;
+        animation: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .nav-apply:hover {
+        background: #fff !important;
+        transform: translateY(-1px);
+      }
+      .nav-apply svg {
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+        transition: transform 0.2s;
+      }
+      .nav-apply:hover svg {
+        transform: translateX(2px);
+      }
+
+      /* ─── NAV DROPDOWNS (conversion mega-menus) ────────── */
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-toggle {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+      }
+      .nav-caret {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        stroke-width: 2.4;
+        fill: none;
+        flex-shrink: 0;
+        opacity: 0.85;
+        transition:
+          transform 0.22s ease,
+          opacity 0.2s;
+      }
+      .has-mega.mega-open .nav-caret {
+        transform: rotate(180deg);
+        opacity: 1;
+      }
+      .has-mega.mega-open > button.nav-login {
+        color: #fff !important;
+      }
+      .main-nav.mega-is-open {
+        background: var(--gd);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      /* Secondary CTA + login */
+      .nav-login {
+        font-size: 13px;
+        font-weight: 700;
+        color: #F4E4C9 !important;
+        text-decoration: none;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-login svg:not(.nav-caret) {
+        width: 15px;
+        height: 15px;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        fill: none;
+      }
+      .nav-login:hover {
+        color: #fff !important;
+      }
+      /* Login → dropdown (Employee / Parent / Student / Payments) */
+      .nav-login-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      button.nav-login {
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      button.nav-login .nav-caret {
+        width: 9px;
+        height: 9px;
+      }
+      .nav-enquire {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 0 22px;
+        height: 44px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 700;
+        white-space: nowrap;
+        color: #F4E4C9 !important;
+        text-decoration: none;
+        background: transparent;
+        border: 1.5px solid rgba(244,228,201,0.55);
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          transform 0.15s;
+      }
+      .nav-enquire:hover {
+        background: rgba(244,228,201,0.12);
+        border-color: #F4E4C9;
+        transform: translateY(-1px);
+      }
+
+      /* Hamburger */
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: #fff;
+      }
+      .nav-hamburger svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+      }
+      .nav-hamburger .nav-icon-close {
+        display: none;
+      }
+      body.mob-drawer-open .nav-hamburger .nav-icon-menu {
+        display: none;
+      }
+      body.mob-drawer-open .nav-hamburger .nav-icon-close {
+        display: block;
+      }
+
+      /* Mobile drawer */
+      .mob-drawer {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 400;
+      }
+      .mob-drawer.open {
+        display: block;
+      }
+      .mob-drawer-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .mob-drawer-panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background: var(--gd);
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .mob-drawer-scroll {
+        flex: 1;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: 6px 16px 16px;
+        border-top: 1px solid rgba(244,228,201,0.1);
+      }
+      .mob-drawer-menu {
+        min-height: 0;
+      }
+
+      /* Text size — sits above the footer divider, not inside the CTA bar */
+      .mob-drawer-font-row {
+        display: none;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 18px;
+        background: var(--gd);
+      }
+
+      /* Pinned action bar at the base of the drawer (stays in view while nav scrolls) */
+      .mob-drawer-footer {
+        flex-shrink: 0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+        background: var(--gd);
+        border-top: 1px solid rgba(244,228,201,0.14);
+        box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+      }
+      .mob-drawer-font-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(244, 228, 201, 0.75);
+        letter-spacing: 0.2px;
+      }
+      .mob-drawer-footer-actions {
+        display: flex;
+        gap: 10px;
+      }
+      .mob-drawer-footer-actions a {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 46px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      /* Statutory & compliance accordion — muted, secondary to primary nav */
+      .mob-acc-compliance > .mob-acc-toggle {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        color: rgba(244,228,201,0.6);
+      }
+      .mob-acc-compliance > .mob-acc-toggle .mob-acc-caret {
+        font-size: 11px;
+        color: rgba(244,228,201,0.5);
+      }
+      /* Two-column link grid; height-animated like .mob-acc-subs (which it also carries) */
+      .mob-compliance-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px 16px;
+        padding: 0 2px;
+      }
+      .mob-compliance-grid a {
+        color: rgba(244,228,201,0.75);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        margin: 0;
+        padding: 7px 0;
+        line-height: 1.3;
+      }
+      .mob-compliance-grid a:hover,
+      .mob-compliance-grid a:focus {
+        color: #FFFFFF;
+      }
+
+      /* 3a mobile accordion nav */
+      .mob-acc-item {
+        border-bottom: 1px solid rgba(244,228,201,0.1);
+      }
+
+      /* ─── FOOTER ──────────────────────────────────────── */
+      .site-footer {
+        background: #0f3b35;
+        padding: 64px 64px 32px;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+      .footer-brand img {
+        width: 135px;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.45);
+        max-width: 260px;
+      }
+      .footer-col h4 {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 10px;
+      }
+      .footer-col a {
+        font-size: 12.5px;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: #fff;
+      }
+      .footer-col a.f-highlight {
+        color: var(--gl);
+      }
+      .footer-col a.f-highlight:hover {
+        color: #fff;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .footer-links {
+        display: flex;
+        gap: 18px;
+      }
+      .footer-links a {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* ─── PAGE NAV (floating bottom dock) ─────────────────────── */
+      #page-nav {
+        position: fixed;
+        bottom: 38px;
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 100px;
+        padding: 8px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.07),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        width: 94vw;
+        max-width: 1280px;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      #page-nav.pnav-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      #page-nav.pnav-card-active {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateX(-50%) translateY(8px) !important;
+      }
+
+      /* leading "Quick nav" label so the dock's purpose is unmistakable */
+      .pnav-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        flex-shrink: 0;
+        padding: 0 12px 0 10px;
+        margin-right: 4px;
+        align-self: stretch;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        font-family: var(--font-body);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        color: #007367;
+        white-space: nowrap;
+      }
+
+      .pnav-label svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      /* scrollable section pills area */
+      .pnav-pills {
+        display: flex;
+        align-items: stretch;
+        gap: 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        white-space: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .pnav-pills::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* divider between pills and CTA */
+      .pnav-divider {
+        width: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+        margin: 4px 8px;
+        align-self: stretch;
+      }
+
+      .pnav-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 11px 18px;
+        border-radius: 100px;
+        border: none;
+        background: transparent;
+        font-family: var(--font-body);
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #5a5a52;
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          background 0.18s ease,
+          color 0.18s ease;
+        flex-shrink: 0;
+        letter-spacing: 0.1px;
+      }
+
+      .pnav-btn:hover {
+        background: rgba(0, 115, 103, 0.09);
+        color: #007367;
+      }
+
+      .pnav-btn.active {
+        background: #007367;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0, 115, 103, 0.3);
+      }
+
+      .pnav-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: currentColor;
+        opacity: 0.4;
+        flex-shrink: 0;
+        transition: opacity 0.18s ease;
+      }
+
+      .pnav-btn.active .pnav-dot {
+        opacity: 1;
+      }
+
+      /* Apply Now CTA inside the dock */
+      .pnav-apply {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 22px;
+        border-radius: 100px;
+        border: none;
+        background: #007367;
+        font-family: var(--font-body);
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+        letter-spacing: 0.2px;
+        box-shadow: 0 3px 12px rgba(0, 115, 103, 0.35);
+        transition:
+          background 0.18s ease,
+          transform 0.15s ease,
+          box-shadow 0.18s ease;
+        text-decoration: none;
+      }
+
+      .pnav-apply:hover {
+        background: #004740;
+        transform: translateY(-1px);
+        box-shadow: 0 5px 16px rgba(0, 115, 103, 0.4);
+      }
+
+      .pnav-apply svg {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+      }
+
+      /* ─── MOBILE BOTTOM NAV ──────────────────────────────────── */
+      #mob-nav,
+      #mob-sheet,
+      #mob-sheet-backdrop {
+        display: none;
+      }
+
+      .cfab-trigger {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        background: #007367;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 18px rgba(0, 115, 103, 0.45);
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .cfab-trigger:hover {
+        background: #004740;
+        transform: scale(1.06);
+        box-shadow: 0 6px 26px rgba(0, 115, 103, 0.55);
+      }
+
+      .cfab-trigger svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .cfab-swap-icons {
+        position: relative;
+        width: 22px;
+        height: 22px;
+      }
+
+      .cfab-swap-icon {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Desktop: static chat icon — no phone/message alternation (the call
+         option only exists on mobile, see .call-action in base.css) */
+      .cfab-swap-msg {
+        opacity: 1;
+        animation: none;
+      }
+
+      .cfab-swap-phone {
+        display: none;
+        opacity: 0;
+        animation: none;
+      }
+
+      .cfab-trigger-icon {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .cfab-icon-close {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.7);
+      }
+
+      #chat-fab.open .cfab-icon-swap {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.7);
+      }
+
+      #chat-fab.open .cfab-swap-msg,
+      #chat-fab.open .cfab-swap-phone {
+        animation-play-state: paused;
+      }
+
+      #chat-fab.open .cfab-icon-close {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+
+      .cfab-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(12px);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      #chat-fab.open .cfab-actions {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+      }
+
+      .cfab-action-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .cfab-label {
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 100px;
+        padding: 7px 14px;
+        font-family: var(--font-body);
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #111110;
+        white-space: nowrap;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .cfab-action-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .cfab-action-btn:hover {
+        transform: scale(1.08);
+      }
+
+      .cfab-action-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .cfab-action-ai {
+        background: #e8eceb;
+        color: #fff;
+        padding: 0;
+        position: relative;
+        box-shadow:
+          0 3px 12px rgba(0, 115, 103, 0.4),
+          0 0 0 2px #fff;
+      }
+
+      /* Clip the photos to the circle here, not on .cfab-action-ai — that
+         way the online-status dot (::after below) isn't cut into a
+         crescent by the same overflow:hidden. */
+      .cfab-student-stack {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .cfab-student-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .cfab-student-photo.is-active {
+        opacity: 1;
+      }
+
+      .cfab-action-ai::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 10px;
+        height: 10px;
+        background: #22c55e;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .cfab-action-call {
+        background: #007367;
+        color: #fff;
+        box-shadow: 0 3px 12px rgba(0, 115, 103, 0.4);
+      }
+
+      .cfab-call,
+      .chat-call {
+        text-decoration: none;
+      }
+
+      .nav-call {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-left: 10px;
+      }
+
+      .nav-call span {
+        font-size: 13.5px;
+        color: #5a5a52;
+      }
+
+      .call-cfab-action-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .call-cfab-action-btn svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .rxd-on .rxd-slide {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* top clears the sticky header; extra bottom padding reserves room for
+           the fixed Quick-Nav pill so content centers between the two, not in
+           the raw viewport — otherwise the surplus piles up as dead space at top */
+        padding: clamp(72px, 8vh, 92px) 64px clamp(112px, 14vh, 140px);
+        opacity: 0;
+        pointer-events: none;
+        will-change: opacity, transform;
+        transition:
+          opacity 0.7s cubic-bezier(0.45, 0, 0.2, 1),
+          transform 0.85s cubic-bezier(0.45, 0, 0.2, 1),
+          clip-path 0.85s cubic-bezier(0.45, 0, 0.2, 1);
+      }
+
+      /* ── slide counter (top-right, clear of the bottom quick-nav) ── */
+      .rxd-on .rxd-counter {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        position: absolute;
+        right: 34px;
+        top: 94px;
+        z-index: 6;
+        font-family: var(--font-display);
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .cmodal-backdrop.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .cmodal {
+        background: #fff;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 540px;
+        max-height: 90vh;
+        overflow-y: auto;
+        transform: translateY(28px) scale(0.97);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+      }
+
+      .cmodal-backdrop.open .cmodal {
+        transform: translateY(0) scale(1);
+      }
+
+      .cmodal-head {
+        background: var(--gd);
+        padding: 28px 32px 24px;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+      }
+
+      .cmodal-head-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 100px;
+        padding: 4px 12px;
+        font-size: 11px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.85);
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .cmodal-head-tag span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gl);
+        display: inline-block;
+      }
+
+      .cmodal-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.4px;
+      }
+
+      .cmodal-sub {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-top: 4px;
+      }
+
+      .cmodal-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .cmodal-close:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .cmodal-close svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .cmodal-body {
+        padding: 28px 32px 32px;
+      }
+
+      .cmodal-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .cmodal-field {
+        margin-bottom: 14px;
+      }
+
+      .cmodal-field label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .cmodal-field input,
+      .cmodal-field select,
+      .cmodal-field textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border-radius: 9px;
+        border: 1.5px solid #dce8e5;
+        background: #f8fbfa;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--ink);
+        outline: none;
+        box-sizing: border-box;
+        resize: vertical;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+
+      .cmodal-field input:focus,
+      .cmodal-field select:focus,
+      .cmodal-field textarea:focus {
+        border-color: var(--g);
+        background: #fff;
+      }
+
+      .cmodal-field select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007367' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 34px;
+      }
+
+      .cmodal-submit {
+        width: 100%;
+        padding: 14px;
+        background: var(--g);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: inherit;
+        cursor: pointer;
+        margin-top: 6px;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .cmodal-submit:hover {
+        background: var(--gd);
+        transform: translateY(-1px);
+      }
+
+      .cmodal-footer-note {
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 14px;
+      }
+
+      .cmodal-footer-note a {
+        color: var(--g);
+        text-decoration: none;
+      }
+
+      .cmodal-footer-note a:hover {
+        text-decoration: underline;
+      }
+
+      .cmodal-success {
+        display: none;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .cmodal-success-icon {
+        font-size: 48px;
+        margin-bottom: 14px;
+      }
+
+      .cmodal-success h3 {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--g);
+        margin-bottom: 8px;
+      }
+
+      .cmodal-success p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* ─── YouTube Modal ──────────────────────────────── */
+      .vid-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+
+      .vid-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .vid-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 0;
+      }
+
+      .vid-modal__content {
+        position: relative;
+        z-index: 1;
+        width: calc(100vw - 4rem);
+        height: calc(100vh - 4rem);
+        max-width: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transform: scale(0.98);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .vid-modal.is-open .vid-modal__content {
+        transform: scale(1);
+      }
+
+      .vid-modal__close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        z-index: 2;
+      }
+
+      .vid-modal__close:hover {
+        background: rgba(255,255,255,0.25);
+      }
+
+      .vid-modal__close svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .vid-modal__player {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .vid-modal__player iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+/* ══ 06 MERGED: css/chat-fab-fix.css ══ */
+/**
+ * Chat FAB click-through fix
+ *
+ * Collapsed .cfab-actions stay in the DOM with opacity: 0. Without these
+ * overrides the flex container keeps their height (~164px) and blocks clicks
+ * on page content above the trigger button.
+ *
+ * Load after page styles that define #chat-fab / .cfab-actions.
+ */
+
+#chat-fab {
+  pointer-events: none;
+}
+
+.cfab-trigger {
+  pointer-events: auto;
+}
+
+.cfab-actions {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+}
+
+/* Active page in the main nav (multi-page) — mirrors the hover treatment */
+.nav-links > li > a[aria-current="page"] {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}

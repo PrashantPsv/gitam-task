@@ -1,0 +1,51 @@
+/* Forma DJR  new font*/
+@font-face {
+  font-family: "Forma DJR Display Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/djr/FormaDJRDisplay-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Forma DJR Display Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../font/djr/FormaDJRDisplay-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Forma DJR Display Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/djr/FormaDJRDisplay-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+/* Forma Inter secondary new font*/
+@font-face {
+  font-family: "Inter Regular";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("../font/inter/Inter-Regular"),
+    url("../font/inter/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter Medium";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("../font/inter/Inter-Medium"),
+    url("../font/inter/Inter-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter Bold";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("../font/inter/Inter-Bold"),
+    url("../font/inter/Inter-Bold.woff") format("woff");
+}

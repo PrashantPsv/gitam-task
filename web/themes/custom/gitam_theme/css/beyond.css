@@ -1,0 +1,280 @@
+
+/* ── Beyond the Resume photos ── */
+.bt-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bt-p1 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Gattem_Venkatesh.webp");
+}
+
+.bt-p2 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Gautami_Tadimalla.webp");
+}
+
+.bt-p3 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Goutam_Surana.webp");
+}
+
+.bt-p4 {
+  background-image: url("https://testadmissions.gitam.edu/images/applyloginimages/Vaibhav_sisinty.webp");
+}
+
+      /* ─── SECTION 9: BEYOND THE RESUME ─────────────── */
+      .beyond-section {
+        background: #fff;
+        padding: 72px 64px;
+      }
+
+      .beyond-header {
+        margin-bottom: 40px;
+      }
+
+      .beyond-title {
+        font-family: var(--font-body);
+        font-size: clamp(28px, 3vw, 42px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -1px;
+        line-height: 1.1;
+        margin-bottom: 6px;
+      }
+
+      .beyond-title span {
+        color: var(--g);
+      }
+
+      .beyond-sub {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--muted);
+      }
+
+      .beyond-bento {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 300px 260px;
+        gap: 14px;
+      }
+
+      .bt-1 {
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+
+      .bt-2 {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .bt-3 {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .bt-4 {
+        grid-column: 2 / 4;
+        grid-row: 2;
+      }
+
+      .bt-card {
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.25s;
+      }
+
+      .bt-card:hover {
+        transform: scale(1.01);
+      }
+
+      .bt-photo {
+        position: absolute;
+        inset: 0;
+      }
+
+      .bt-p1 {
+        background: linear-gradient(
+          150deg,
+          #001e1a 0%,
+          #004038 55%,
+          #006050 100%
+        );
+      }
+
+      .bt-p2 {
+        background: linear-gradient(
+          150deg,
+          #1a1500 0%,
+          #3a3000 55%,
+          #5a4800 100%
+        );
+      }
+
+      .bt-p3 {
+        background: linear-gradient(
+          150deg,
+          #1a0018 0%,
+          #3a0035 55%,
+          #5a0050 100%
+        );
+      }
+
+      .bt-p4 {
+        background: linear-gradient(
+          150deg,
+          #001520 0%,
+          #002e42 55%,
+          #004560 100%
+        );
+      }
+
+      .bt-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(244, 228, 201, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+
+      .bt-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+          to top,
+          rgba(0, 10, 8, 0.68) 0%,
+          rgba(0, 10, 8, 0.22) 40%,
+          transparent 72%
+        );
+        pointer-events: none;
+        transition: background 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .bt-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.72) 0%,
+          rgba(0, 0, 0, 0.32) 55%,
+          transparent 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+        transition: height 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .bt-reveal {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(4px);
+        transition:
+          max-height 0.44s cubic-bezier(0.22, 0.61, 0.36, 1),
+          opacity 0.3s ease 0.06s,
+          transform 0.38s ease 0.06s,
+          margin 0.44s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .bt-card.is-revealed .bt-reveal {
+        max-height: 120px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .bt-card.is-revealed .bt-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(0, 10, 8, 0.92) 0%,
+          rgba(0, 10, 8, 0.55) 50%,
+          transparent 100%
+        );
+      }
+
+      .bt-card.is-revealed .bt-overlay-h {
+        background: linear-gradient(
+          to right,
+          rgba(0, 10, 8, 0.9) 0%,
+          rgba(0, 10, 8, 0.55) 55%,
+          transparent 100%
+        );
+      }
+
+      .bt-card.is-revealed::after {
+        height: 58%;
+      }
+
+      .bt-card.is-revealed .bt-bg-text {
+        opacity: 0.35;
+      }
+
+      .bt-role-tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        padding: 4px 12px;
+        border-radius: 100px;
+        font-size: 10.5px;
+        font-weight: 600;
+      }
+
+      .bt-content {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 2;
+      }
+
+      .bt-name {
+        font-family: var(--font-body);
+        font-size: clamp(17px, 1.7vw, 22px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.4px;
+        line-height: 1.1;
+        margin-bottom: 3px;
+      }
+
+      .bt-role {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 6px;
+      }
+
+      .bt-dept {
+        font-size: 10.5px;
+        font-weight: 400;
+        color: rgba(244, 228, 201, 0.5);
+      }
+
+      .bt-bg-text {
+        position: absolute;
+        right: -8px;
+        bottom: -16px;
+        font-family: var(--font-body);
+        font-size: clamp(60px, 8vw, 110px);
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.05);
+        letter-spacing: -3px;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }

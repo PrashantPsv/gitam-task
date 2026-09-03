@@ -1,0 +1,380 @@
+
+      /* ─── SECTION 6: RECRUITERS ─────────────────────── */
+      .recruiters-section {
+        background: transparent;
+        padding: 72px 0 68px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Hero headline */
+      .recruiters-hero {
+        text-align: center;
+        padding: 0 64px 52px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .recruiters-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .recruiters-eyebrow-text {
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+        color: var(--aw);
+        opacity: 0.65;
+      }
+
+      .recruiters-eyebrow-diamond {
+        color: var(--aw);
+        opacity: 0.45;
+        font-size: 7px;
+        line-height: 1;
+      }
+
+      .recruiters-main-title {
+        font-family: var(--font-body);
+        font-size: clamp(38px, 4.8vw, 66px);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -1.5px;
+        line-height: 1;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .recruiters-main-title-gold {
+        font-family: var(--font-body);
+        font-size: clamp(38px, 4.8vw, 66px);
+        font-weight: 900;
+        color: var(--aw);
+        letter-spacing: -1.5px;
+        line-height: 1.05;
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 26px;
+      }
+
+      .recruiters-divider {
+        width: 44px;
+        height: 2px;
+        background: var(--aw);
+        margin: 0 auto 20px;
+        border-radius: 2px;
+        opacity: 0.3;
+      }
+
+      .recruiters-hero-sub {
+        font-size: 14.5px;
+        font-weight: 300;
+        color: rgba(244, 228, 201, 0.52);
+        margin-bottom: 36px;
+        line-height: 1.65;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .recruiters-stats-bar {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid rgba(244, 228, 201, 0.16);
+        border-radius: 100px;
+        padding: 8px 6px;
+        background: rgba(244, 228, 201, 0.04);
+        backdrop-filter: blur(8px);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+      }
+
+      .recruiters-stat {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 8px 24px;
+        border-right: 1px solid rgba(244, 228, 201, 0.13);
+      }
+
+      .recruiters-stat:last-child {
+        border-right: none;
+      }
+
+      .recruiters-stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(244, 228, 201, 0.22);
+        background: rgba(244, 228, 201, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--aw);
+      }
+
+      .recruiters-stat-icon svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .recruiters-stat-text {
+        text-align: left;
+      }
+
+      .recruiters-stat-number {
+        font-size: 21px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
+        line-height: 1;
+      }
+
+      .recruiters-stat-label {
+        font-size: 10.5px;
+        font-weight: 500;
+        color: rgba(244, 228, 201, 0.5);
+        letter-spacing: 0.2px;
+        margin-top: 3px;
+      }
+
+      .recruiters-track-wrap {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .recruiters-track-wrap::before,
+      .recruiters-track-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 140px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .recruiters-track-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, #002820 0%, transparent 100%);
+      }
+
+      .recruiters-track-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, #002820 0%, transparent 100%);
+      }
+
+      .recruiter-row {
+        display: flex;
+        align-items: center;
+        width: max-content;
+      }
+
+      .recruiter-row-1 {
+        animation: scroll-left 55s linear infinite;
+      }
+
+      .recruiter-row-2 {
+        animation: scroll-right 60s linear infinite;
+      }
+
+      .recruiter-item {
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+      }
+
+      .recruiter-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 18px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+        cursor: default;
+      }
+
+      .recruiter-chip:hover {
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow:
+          0 4px 16px rgba(0, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .recruiter-chip-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .recruiter-chip-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: 0.2px;
+      }
+
+      /* ─── SECTION 7: PLACEMENTS ────────────────────── */
+      .placements-section {
+        background: #002820;
+        padding: 88px 64px 72px;
+        position: relative;
+        overflow-x: clip;
+        color: #fff;
+      }
+
+      .placements-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(244, 228, 201, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 26px 26px;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .placements-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(139, 203, 183, 0.2),
+          transparent
+        );
+      }
+
+      .placements-header {
+        max-width: 1600px;
+        margin: 0 auto 48px;
+        padding: 0 0 4px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .placements-title {
+        font-family: var(--font-body);
+        font-size: clamp(40px, 3.8vw, 58px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -1.5px;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .placements-title-green {
+        font-family: var(--font-body);
+        font-size: clamp(40px, 3.8vw, 58px);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -1.5px;
+        color: var(--gl);
+        display: block;
+        margin-bottom: 22px;
+        font-style: italic;
+      }
+
+      .placements-sub {
+        font-size: 14.5px;
+        font-weight: 300;
+        color: rgba(244, 228, 201, 0.62);
+        line-height: 1.65;
+        max-width: 320px;
+      }
+
+      .placements-sub strong {
+        font-weight: 500;
+        color: var(--aw);
+      }
+
+      .placements-stage {
+        position: relative;
+        height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1600px;
+        margin: 0 -64px 32px;
+        overflow: hidden;
+      }
+
+      .placements-stage::before,
+      .placements-stage::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 160px;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .placements-stage::before {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          #002820 0%,
+          #002820 35%,
+          rgba(0, 40, 32, 0) 100%
+        );
+      }
+
+      .placements-stage::after {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          #002820 0%,
+          #002820 35%,
+          rgba(0, 40, 32, 0) 100%
+        );
+      }
+
+      .placements-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform-style: preserve-3d;
+      }
+
+      .placements-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        position: relative;
+        z-index: 2;
+      }

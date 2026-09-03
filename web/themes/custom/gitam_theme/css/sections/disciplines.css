@@ -1,0 +1,22 @@
+
+      /* Column 2 — Disciplines */
+      .prog-col-discs {
+        flex: 1;
+        min-width: 260px;
+        overflow-y: auto;
+      }
+
+      /* ─── 14 DISCIPLINES SECTION ─────────────────────── */
+      /* ─── 14 DISCIPLINES — Option 1c: Editorial ─── */
+      .disc-section {
+        padding: 72px 64px 56px;
+        background: linear-gradient(
+          135deg,
+          #001e18 0%,
+          #003a30 30%,
+          #004740 60%,
+          #005548 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }

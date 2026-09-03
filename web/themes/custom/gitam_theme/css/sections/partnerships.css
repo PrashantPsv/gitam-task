@@ -1,0 +1,57 @@
+
+      .partners-head {
+        margin-bottom: 0;
+      }
+
+      .partners-stats-row {
+        display: flex;
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .partners-stat-pill {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        padding: 10px 6px;
+        gap: 1px;
+      }
+
+      .partners-stat-num {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--gl);
+        letter-spacing: -0.4px;
+        line-height: 1;
+      }
+
+      .partners-stat-lbl {
+        font-size: 9.5px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-align: center;
+      }
+
+/* ══ 08 GLOBAL NETWORK / PARTNERSHIPS (ported from the body-level
+      <style> block that preceded #sec-partnerships) ══ */
+        .gn-section {
+          position: relative;
+          background: radial-gradient(120% 140% at 15% 0%, #0a2b26 0%, var(--gd) 42%, #051815 100%);
+          padding: clamp(56px, 8vw, 110px) 0;
+          overflow: hidden;
+        }
+        .gn-glow {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background:
+            radial-gradient(560px 320px at 88% 8%, rgba(139, 203, 183, 0.16), transparent 70%),
+            radial-gradient(420px 260px at 6% 96%, rgba(165, 130, 85, 0.12), transparent 70%);
+        }

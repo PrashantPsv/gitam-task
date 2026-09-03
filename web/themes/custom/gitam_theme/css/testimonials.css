@@ -1,0 +1,73 @@
+
+      /* ── STUDENT EXPERIENCES (dark vertical marquee) ── */
+      .testimonials-section {
+        position: relative;
+        background: radial-gradient(
+          120% 120% at 82% 0%,
+          #0a2e29 0%,
+          #061a17 46%,
+          #03100d 100%
+        );
+        padding: 72px 48px;
+        overflow: hidden;
+      }
+      .testimonials-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.022) 0 1px,
+          transparent 1px 28px
+        );
+        pointer-events: none;
+      }
+      .testimonials-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) minmax(0, 56%);
+        gap: 48px;
+        align-items: start;
+      }
+      .testimonials-heading {
+        font-size: clamp(30px, 3.4vw, 46px);
+        line-height: 1.12;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 20px;
+      }
+      .testimonials-heading em {
+        font-style: italic;
+        color: var(--gl);
+      }
+      .testimonials-chat-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--g);
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 30px rgba(0, 115, 103, 0.4);
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .testimonials-chat-btn svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .testimonials-chat-btn:hover {
+        background: #00897a;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 36px rgba(0, 115, 103, 0.5);
+      }
