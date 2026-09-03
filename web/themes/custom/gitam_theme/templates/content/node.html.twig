@@ -1,0 +1,36 @@
+{#
+/**
+ * Generic Node Template for All Content Types
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'common-node-card'
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  
+  {% if not page %}
+    <header class="node-header">
+      <h2{{ title_attributes.addClass('node-title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </header>
+  {% else %}
+    <header class="node-header">
+      <h1{{ title_attributes.addClass('node-title') }}>{{ label }}</h1>
+    </header>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node-body-content') }}>
+    {{ content }}
+  </div>
+
+</article>
